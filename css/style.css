@@ -253,3 +253,35 @@
   .asset-name strong,.asset-price strong{font-size:11px}
   .mini-chart{width:66px}
 }
+
+/* V1.8 — Match ticker-tape clipping behavior on floating cards */
+.tradingview-market-card{
+  width:200px!important;
+  height:76px!important;
+  min-width:200px!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border:2px solid rgba(16,245,157,.92)!important;
+  border-radius:16px!important;
+  background:rgba(8,18,15,.72)!important;
+  box-shadow:0 0 8px rgba(16,245,157,.5),0 0 20px rgba(16,245,157,.18),inset 0 0 8px rgba(16,245,157,.08)!important;
+}
+.tradingview-market-card tv-single-ticker{
+  display:block!important;
+  width:200px!important;
+  height:100px!important;
+  min-width:200px!important;
+  min-height:100px!important;
+}
+@media(max-width:620px){
+  .tradingview-market-card{
+    width:178px!important;
+    height:70px!important;
+    min-width:178px!important;
+  }
+  .tradingview-market-card tv-single-ticker{
+    width:178px!important;
+    height:100px!important;
+    min-width:178px!important;
+  }
+}
