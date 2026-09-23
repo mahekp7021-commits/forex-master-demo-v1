@@ -12,7 +12,7 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 /* TradingView SingleTicker hero cards */
-.tradingview-market-card{position:absolute;width:200px;height:100px;min-width:200px;padding:0;display:block;border:0;border-radius:4px;background:transparent;box-shadow:none;overflow:hidden;animation:none}
+.tradingview-market-card{position:absolute;width:200px;height:100px;min-width:200px;padding:0;display:block;border:2px solid rgba(16,245,157,.92);border-radius:16px;background:rgba(8,18,15,.72);box-shadow:0 0 8px rgba(16,245,157,.5),0 0 20px rgba(16,245,157,.18),inset 0 0 8px rgba(16,245,157,.08);overflow:hidden;animation:none}
 .tradingview-market-card tv-single-ticker{display:block;width:200px;height:100px;min-width:200px;min-height:100px}
 .ticker-xau{top:108px;left:-18px;z-index:7}
 .ticker-btc{bottom:112px;left:-8px;z-index:7}
