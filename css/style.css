@@ -45,3 +45,32 @@
   .phone-tv-chart .tradingview-widget-copyright{height:25px;font-size:6px}
   .phone-home-indicator{bottom:5px;width:54px;height:2.5px}
 }
+
+
+/* V1.2 — Premium generated hero background */
+.hero{
+  position:relative;
+  isolation:isolate;
+  background-image:url("../assets/forex-hero-background.png");
+  background-size:cover;
+  background-position:center center;
+  background-repeat:no-repeat;
+}
+.hero::before{
+  content:"";
+  position:absolute;
+  inset:0;
+  z-index:-1;
+  background:
+    linear-gradient(90deg,rgba(7,9,9,.88) 0%,rgba(7,9,9,.62) 38%,rgba(7,9,9,.18) 72%,rgba(7,9,9,.34) 100%),
+    linear-gradient(180deg,rgba(7,9,9,.28),rgba(7,9,9,.08) 45%,rgba(7,9,9,.42));
+  pointer-events:none;
+}
+.hero-grid{position:relative;z-index:1}
+@media(max-width:1100px){
+  .hero{background-position:center center}
+  .hero::before{
+    background:
+      linear-gradient(180deg,rgba(7,9,9,.82) 0%,rgba(7,9,9,.56) 52%,rgba(7,9,9,.38) 100%);
+  }
+}
