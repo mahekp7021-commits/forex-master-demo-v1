@@ -10,3 +10,7 @@
 .service-card,.price-card,.testimonial,.news-card{transition:transform .3s ease,border-color .3s ease,box-shadow .3s ease}.service-card:hover,.price-card:hover,.testimonial:hover,.news-card:hover{transform:translateY(-7px);border-color:rgba(16,245,157,.22);box-shadow:0 25px 60px rgba(0,0,0,.24)}
 @keyframes phoneFloat{0%,100%{transform:rotate(2deg) translateY(0)}50%{transform:rotate(1deg) translateY(-12px)}}@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes orbitPulse{0%,100%{opacity:.45}50%{opacity:.9}}@keyframes girlReveal{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:none}}@keyframes floatInLeft{from{opacity:0;transform:translateX(-35px)}to{opacity:1;transform:none}}@keyframes floatInRight{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:none}}@keyframes floatInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
+
+/* TradingView hero mini charts */
+.tv-market-card{width:140px;height:72px;min-width:140px;padding:0;overflow:hidden;display:block;animation:cardFloat 5s ease-in-out infinite}
+.tv-market-card tv-mini-chart{display:block;width:100%;height:100%;--tv-widget-background-color:transparent;--tv-widget-text-color:#dfe8e3;--tv-widget-accent-color:#d9ff45;--tv-widget-font-family:"DM Sans",sans-serif}
