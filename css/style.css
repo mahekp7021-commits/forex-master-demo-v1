@@ -11,6 +11,7 @@
 @keyframes phoneFloat{0%,100%{transform:rotate(2deg) translateY(0)}50%{transform:rotate(1deg) translateY(-12px)}}@keyframes cardFloat{0%,100%{transform:translateY(0)}50%{transform:translateY(-8px)}}@keyframes orbitPulse{0%,100%{opacity:.45}50%{opacity:.9}}@keyframes girlReveal{from{opacity:0;transform:translateY(35px) scale(.97)}to{opacity:1;transform:none}}@keyframes floatInLeft{from{opacity:0;transform:translateX(-35px)}to{opacity:1;transform:none}}@keyframes floatInRight{from{opacity:0;transform:translateX(35px)}to{opacity:1;transform:none}}@keyframes floatInUp{from{opacity:0;transform:translateY(30px)}to{opacity:1;transform:none}}
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
-/* TradingView hero mini charts */
-.tv-market-card{width:140px;height:104px;min-width:140px;padding:0;overflow:hidden;display:block;animation:cardFloat 5s ease-in-out infinite}
-.tv-market-card tv-mini-chart{display:block;width:100%;height:104px;min-height:104px;--tv-widget-background-color:transparent;--tv-widget-text-color:#dfe8e3;--tv-widget-accent-color:#d9ff45;--tv-widget-font-family:"DM Sans",sans-serif}
+/* TradingView single ticker hero card */
+.tv-market-card{width:293px;height:73px;min-width:293px;padding:0;overflow:hidden;display:block;border:0;border-radius:4px;background:transparent;box-shadow:none;backdrop-filter:none;animation:cardFloat 5s ease-in-out infinite}
+.tv-market-card tv-single-ticker{display:block;width:293px;height:73px;min-width:293px;min-height:73px}
+.ticker-gold{top:108px;left:-18px;z-index:7}
