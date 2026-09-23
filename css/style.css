@@ -181,3 +181,31 @@
   .hero-ticker-tape{height:48px}
   .hero-ticker-tape tv-ticker-tape{height:48px;min-height:48px}
 }
+
+
+/* V1.6 — Lock ticker tape to the true bottom edge of the hero background */
+@media(min-width:901px){
+  .hero{
+    min-height:620px;
+    height:calc(100vh - 86px);
+    padding-bottom:72px;
+    position:relative;
+  }
+  .hero-grid{
+    min-height:100%;
+  }
+  .hero-ticker-tape{
+    top:auto!important;
+    bottom:0!important;
+    left:0!important;
+    right:0!important;
+    width:100%!important;
+    margin:0!important;
+  }
+}
+@media(max-width:900px){
+  .hero-ticker-tape{
+    top:auto!important;
+    bottom:0!important;
+  }
+}
