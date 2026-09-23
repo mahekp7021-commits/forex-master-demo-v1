@@ -18,3 +18,30 @@
 .ticker-btc{bottom:112px;left:-8px;z-index:7}
 .ticker-eur{top:138px;right:-18px;z-index:7}
 .ticker-gbp{bottom:142px;right:-8px;z-index:7}
+
+
+/* Realistic TradingView mobile phone chart */
+.phone{padding:7px;border:5px solid #242d2a;border-radius:42px;background:linear-gradient(145deg,#202b28,#080c0b 55%,#151c19);box-shadow:0 35px 85px rgba(0,0,0,.58),0 0 55px rgba(16,245,157,.13),inset 0 0 0 1px rgba(255,255,255,.08);overflow:hidden}
+.phone-camera{position:absolute;z-index:12;top:7px;left:50%;transform:translateX(-50%);width:82px;height:22px;border-radius:0 0 15px 15px;background:#050707;box-shadow:inset 0 -1px 0 rgba(255,255,255,.06)}
+.phone-screen{position:absolute;inset:7px;border-radius:34px;overflow:hidden;background:#0b0d0d;display:flex;flex-direction:column}
+.phone-status{height:28px;flex:0 0 28px;padding:7px 14px 0;display:flex;justify-content:space-between;font-size:8px;color:#e7eeea;position:relative;z-index:10;background:linear-gradient(180deg,rgba(4,7,6,.96),rgba(4,7,6,.7))}
+.phone-appbar{height:34px;flex:0 0 34px;padding:5px 12px;display:flex;align-items:center;justify-content:space-between;font-size:9px;color:#a9b5b0;background:#0b0f0e;border-bottom:1px solid rgba(255,255,255,.06);position:relative;z-index:8}
+.phone-appbar strong{font:700 12px/1 "Space Grotesk",sans-serif;color:#f7f8f7}
+.phone-appbar span{color:var(--green);font-weight:700}
+.phone-chart-shell{position:relative;flex:1;min-height:0;background:#0f0f0f}
+.phone-tv-chart{height:100%!important;width:100%!important}
+.phone-tv-chart .tradingview-widget-container__widget{height:calc(100% - 28px)!important;width:100%!important}
+.phone-tv-chart .tradingview-widget-copyright{height:28px;display:flex;align-items:center;justify-content:center;gap:2px;font-size:7px;line-height:1;color:#8c9691;background:#0f0f0f;overflow:hidden}
+.phone-tv-chart .tradingview-widget-copyright a{color:#8c9691}
+.phone-home-indicator{position:absolute;z-index:20;bottom:7px;left:50%;transform:translateX(-50%);width:66px;height:3px;border-radius:99px;background:rgba(255,255,255,.75);box-shadow:0 0 8px rgba(255,255,255,.08)}
+
+@media(max-width:620px){
+  .phone{width:220px;height:410px;border-radius:34px;padding:5px;border-width:4px}
+  .phone-screen{inset:5px;border-radius:28px}
+  .phone-camera{top:5px;width:70px;height:18px;border-radius:0 0 12px 12px}
+  .phone-status{height:23px;flex-basis:23px;padding:6px 11px 0;font-size:7px}
+  .phone-appbar{height:29px;flex-basis:29px;padding:4px 9px;font-size:8px}
+  .phone-appbar strong{font-size:10px}
+  .phone-tv-chart .tradingview-widget-copyright{height:25px;font-size:6px}
+  .phone-home-indicator{bottom:5px;width:54px;height:2.5px}
+}
