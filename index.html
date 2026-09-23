@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-mini-chart.js"></script>
 </head>
 <body>
   <div class="page-glow page-glow-a"></div>
@@ -63,10 +64,10 @@
         <div class="hero-visual reveal reveal-delay-1">
           <div class="orb-glow"></div>
           <div class="world-orb"></div>
-          <div class="market-card card-a"><span>Gold</span><b>+1.24%</b></div>
-          <div class="market-card card-b"><span>Bitcoin</span><b>+0.92%</b></div>
-          <div class="market-card card-c"><span>EURUSD</span><b>+0.52%</b></div>
-          <div class="market-card card-d"><span>GBPUSD</span><b>+0.48%</b></div>
+          <div class="market-card tv-market-card card-a"><tv-mini-chart symbol="TVC:GOLD"></tv-mini-chart></div>
+          <div class="market-card tv-market-card card-b"><tv-mini-chart symbol="BITSTAMP:BTCUSD"></tv-mini-chart></div>
+          <div class="market-card tv-market-card card-c"><tv-mini-chart symbol="FX:EURUSD"></tv-mini-chart></div>
+          <div class="market-card tv-market-card card-d"><tv-mini-chart symbol="OANDA:GBPUSD"></tv-mini-chart></div>
           <div class="phone">
             <div class="phone-top">FOREX <span>•••</span></div>
             <div class="pair">EURUSD <strong>+0.52%</strong></div>
