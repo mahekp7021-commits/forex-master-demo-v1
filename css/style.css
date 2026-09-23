@@ -102,3 +102,50 @@
 @media(max-width:620px){
   .hero-visual::before{width:300px;height:410px;filter:blur(22px)}
 }
+
+
+/* V1.4 — Stronger wide neon aura behind phone */
+.hero-visual::before{
+  width:680px;
+  height:680px;
+  left:50%;
+  top:50%;
+  background:
+    radial-gradient(circle at center,
+      rgba(16,245,157,.42) 0%,
+      rgba(16,245,157,.30) 18%,
+      rgba(16,245,157,.20) 34%,
+      rgba(16,245,157,.11) 50%,
+      rgba(16,245,157,.045) 64%,
+      transparent 78%);
+  filter:blur(34px);
+  opacity:1;
+  mix-blend-mode:screen;
+  animation:phoneGlowWide 4s ease-in-out infinite;
+}
+.hero-visual::after{
+  content:"";
+  position:absolute;
+  width:520px;
+  height:520px;
+  left:50%;
+  top:50%;
+  transform:translate(-50%,-50%);
+  border-radius:50%;
+  background:radial-gradient(circle,
+    rgba(25,255,165,.24) 0%,
+    rgba(16,245,157,.13) 32%,
+    transparent 68%);
+  filter:blur(12px);
+  z-index:3;
+  pointer-events:none;
+  mix-blend-mode:screen;
+}
+@keyframes phoneGlowWide{
+  0%,100%{transform:translate(-50%,-50%) scale(.94);opacity:.78}
+  50%{transform:translate(-50%,-50%) scale(1.08);opacity:1}
+}
+@media(max-width:620px){
+  .hero-visual::before{width:440px;height:540px;filter:blur(28px)}
+  .hero-visual::after{width:350px;height:430px;filter:blur(10px)}
+}
