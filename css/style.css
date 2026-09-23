@@ -12,8 +12,8 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 /* Finlogix SingleSymbol hero cards — widget content untouched, visual size scaled */
-.finlogix-market-card{position:absolute;width:190px;height:102px;padding:0;display:block;border:2px solid rgba(16,245,157,.92);border-radius:18px;background:transparent;box-shadow:0 0 8px rgba(16,245,157,.55),0 0 22px rgba(16,245,157,.22),inset 0 0 8px rgba(16,245,157,.12);backdrop-filter:none;overflow:visible;animation:none}
-.finlogix-market-card .finlogix-container{display:block;width:307px;height:165px;min-width:307px;min-height:165px;overflow:visible;transform:scale(.62);transform-origin:top left}
+.finlogix-market-card{position:absolute;width:190px;height:102px;padding:0;display:block;border:2px solid rgba(16,245,157,.9);border-radius:16px;background:#0e1715;box-shadow:0 0 10px rgba(16,245,157,.5),0 0 24px rgba(16,245,157,.18),inset 0 0 8px rgba(16,245,157,.08);backdrop-filter:none;overflow:hidden;animation:none}
+.finlogix-market-card .finlogix-container{display:block;width:307px;height:165px;min-width:307px;min-height:165px;overflow:hidden;transform:scale(.62);transform-origin:top left}
 .ticker-xau{top:108px;left:-18px;z-index:7}
 .ticker-btc{bottom:112px;left:-8px;z-index:7}
 .ticker-eur{top:138px;right:-18px;z-index:7}
