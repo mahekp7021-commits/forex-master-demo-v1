@@ -15,3 +15,6 @@
 .tv-market-card{width:293px;height:73px;min-width:293px;padding:0;overflow:hidden;display:block;border:0;border-radius:4px;background:transparent;box-shadow:none;backdrop-filter:none;animation:cardFloat 5s ease-in-out infinite}
 .tv-market-card tv-single-ticker{display:block;width:293px;height:73px;min-width:293px;min-height:73px}
 .ticker-gold{top:108px;left:-18px;z-index:7}
+.ticker-btc{bottom:112px;left:-8px;z-index:7}
+.ticker-eur{top:138px;right:-18px;z-index:7}
+.ticker-gbp{bottom:142px;right:-8px;z-index:7}
