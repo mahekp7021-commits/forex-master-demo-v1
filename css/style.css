@@ -12,5 +12,5 @@
 @media(prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important;transition:none!important;scroll-behavior:auto!important}}
 
 /* TradingView hero mini charts */
-.tv-market-card{width:140px;height:72px;min-width:140px;padding:0;overflow:hidden;display:block;animation:cardFloat 5s ease-in-out infinite}
-.tv-market-card tv-mini-chart{display:block;width:100%;height:100%;--tv-widget-background-color:transparent;--tv-widget-text-color:#dfe8e3;--tv-widget-accent-color:#d9ff45;--tv-widget-font-family:"DM Sans",sans-serif}
+.tv-market-card{width:140px;height:104px;min-width:140px;padding:0;overflow:hidden;display:block;animation:cardFloat 5s ease-in-out infinite}
+.tv-market-card tv-mini-chart{display:block;width:100%;height:104px;min-height:104px;--tv-widget-background-color:transparent;--tv-widget-text-color:#dfe8e3;--tv-widget-accent-color:#d9ff45;--tv-widget-font-family:"DM Sans",sans-serif}
