@@ -1415,3 +1415,72 @@ body{
 
 .page-glow-a{background:rgba(16,245,157,.035)}
 .page-glow-b{background:rgba(217,255,69,.022)}
+
+
+/* V1.19 — Single unified deep green-black cinematic page background */
+:root{
+  --page-cinematic:#06130f;
+  --page-cinematic-deep:#06130f;
+}
+
+/* One continuous background tone across every non-hero layer. */
+html,
+body{
+  background:var(--page-cinematic)!important;
+}
+
+body{
+  background-color:var(--page-cinematic)!important;
+  background-image:none!important;
+}
+
+/* Hero keeps its own cinematic artwork; every section after it shares one exact base. */
+.stats,
+.feature-section,
+.services,
+.platform,
+.pricing,
+.testimonials,
+.faq,
+.news,
+.cta-section,
+.site-footer,
+.section-pad{
+  background-color:var(--page-cinematic)!important;
+  background-image:none!important;
+}
+
+/* Remove section-specific gradient overlays that were creating visible color bands. */
+.services::before,
+.services::after,
+.feature-section::before,
+.platform::before,
+.platform::after,
+.testimonials::before,
+.testimonials::after,
+.cta-section::before,
+.cta-section::after{
+  background:none!important;
+}
+
+/* Keep the unified tone behind the stats strip itself. */
+.stats-grid{
+  background:
+    linear-gradient(180deg,rgba(16,245,157,.025),rgba(16,245,157,.008)),
+    var(--page-cinematic)!important;
+}
+
+/* Cards can remain subtly elevated, but their surrounding page must stay identical. */
+.site-header{
+  background:rgba(6,19,15,.94)!important;
+}
+
+.site-footer{
+  background:var(--page-cinematic)!important;
+}
+
+@media(prefers-reduced-transparency:reduce){
+  .site-header{
+    background:var(--page-cinematic)!important;
+  }
+}
