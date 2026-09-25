@@ -1283,3 +1283,135 @@
     inset:-20px -18px -20px -18px;
   }
 }
+
+
+/* V1.18 — Global page palette matched to FOREX hero background */
+:root{
+  --bg:#030c0b;
+  --surface:#06130f;
+  --surface2:#091a15;
+  --text:#f3f7f4;
+  --muted:#9eaaa5;
+  --lime:#d9ff45;
+  --green:#10f59d;
+  --line:rgba(16,245,157,.11);
+  --shadow:0 24px 70px rgba(0,0,0,.42);
+}
+
+html,
+body{
+  background:#030c0b;
+}
+
+body{
+  background:
+    radial-gradient(ellipse at 74% 8%,rgba(16,245,157,.045),transparent 27%),
+    radial-gradient(ellipse at 14% 42%,rgba(16,245,157,.025),transparent 31%),
+    linear-gradient(180deg,#030c0b 0%,#06130f 38%,#071712 64%,#030b09 100%);
+}
+
+/* Keep every major page region in the same deep cinematic green-black family. */
+.site-header{
+  background:rgba(3,10,9,.90);
+  border-bottom:1px solid rgba(16,245,157,.07);
+}
+
+.stats{
+  background:transparent;
+}
+
+.stats-grid{
+  background:
+    linear-gradient(90deg,rgba(7,27,20,.88),rgba(5,20,15,.90)),
+    #06130f;
+  border-color:rgba(16,245,157,.16);
+}
+
+.services,
+.testimonials,
+.news,
+.section-pad,
+.platform,
+.pricing,
+.faq{
+  background-color:transparent;
+}
+
+.services{
+  background:
+    radial-gradient(ellipse at 20% 0%,rgba(16,245,157,.025),transparent 34%),
+    linear-gradient(180deg,rgba(3,12,11,0),rgba(6,18,14,.42) 48%,rgba(3,12,11,0));
+}
+
+.service-card,
+.news-card,
+.testimonial,
+.price-card,
+.accordion details{
+  background:
+    linear-gradient(145deg,rgba(8,24,18,.92),rgba(4,14,11,.96));
+  border-color:rgba(16,245,157,.075);
+}
+
+.platform{
+  background:
+    radial-gradient(ellipse at 72% 45%,rgba(16,245,157,.045),transparent 32%),
+    linear-gradient(180deg,rgba(6,19,15,.18),rgba(3,12,11,.55));
+}
+
+.device-screen{
+  background:
+    linear-gradient(160deg,#0a1a15,#030d0b);
+  border-color:rgba(16,245,157,.16);
+}
+
+.testimonials{
+  background:
+    linear-gradient(180deg,rgba(3,12,11,0),rgba(5,17,13,.48),rgba(3,12,11,0));
+}
+
+.cta-section{
+  background:transparent;
+}
+
+.cta-box{
+  background:
+    radial-gradient(circle at 82% 50%,rgba(16,245,157,.07),transparent 34%),
+    linear-gradient(135deg,#081914,#04100c);
+  border-color:rgba(16,245,157,.15);
+}
+
+.site-footer{
+  background:#020a09;
+  border-top-color:rgba(16,245,157,.09);
+}
+
+.news-image{
+  background:linear-gradient(140deg,#06130f,#0b241a);
+}
+
+.image-one{
+  background:
+    radial-gradient(circle at 30% 30%,rgba(16,245,157,.38),transparent 22%),
+    linear-gradient(140deg,#06130f,#0b281d);
+}
+
+.image-two{
+  background:
+    radial-gradient(circle at 70% 30%,rgba(217,255,69,.24),transparent 18%),
+    linear-gradient(140deg,#06110e,#10251d);
+}
+
+.image-three{
+  background:
+    radial-gradient(circle at 30% 70%,rgba(16,245,157,.25),transparent 18%),
+    linear-gradient(140deg,#06120f,#0d241c);
+}
+
+/* Give section transitions the same soft green-black continuity as the hero image. */
+.section-pad:not(.feature-section)::before{
+  background:linear-gradient(90deg,transparent,rgba(16,245,157,.025),transparent);
+}
+
+.page-glow-a{background:rgba(16,245,157,.035)}
+.page-glow-b{background:rgba(217,255,69,.022)}
