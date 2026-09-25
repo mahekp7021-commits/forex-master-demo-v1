@@ -1,1 +1,76 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700"><defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#14201c"/><stop offset="1" stop-color="#080c0b"/></linearGradient><linearGradient id="lime" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#efff55"/><stop offset="1" stop-color="#a8ff43"/></linearGradient></defs><rect width="800" height="700" rx="36" fill="url(#bg)"/><path d="M95 0h250L250 700H0z" fill="url(#lime)" opacity=".92"/><g opacity=".22" stroke="#fff"><path d="M0 80h800M0 160h800M0 240h800M0 320h800M0 400h800M0 480h800M0 560h800M0 640h800"/><path d="M80 0v700M160 0v700M240 0v700M320 0v700M400 0v700M480 0v700M560 0v700M640 0v700M720 0v700"/></g><ellipse cx="400" cy="610" rx="180" ry="35" fill="#000" opacity=".35"/><path d="M300 290c8-95 75-145 139-145s131 52 137 145l-13 185H313z" fill="#2a3330"/><circle cx="438" cy="207" r="66" fill="#c6cbc8"/><path d="M377 200c5-63 119-80 128 12-30-23-62-30-128-12z" fill="#222927"/><rect x="371" y="266" width="135" height="215" rx="34" fill="#4a5551"/><path d="M395 330h87v160h-87z" fill="#1a211f"/><rect x="399" y="350" width="80" height="125" rx="12" fill="#0d1211" stroke="#10f59d" stroke-width="4"/><path d="M410 447c18-52 31 20 48-46 11-40 20 25 29-21" fill="none" stroke="#d9ff45" stroke-width="4"/><rect x="112" y="110" width="155" height="78" rx="16" fill="#101917" stroke="#10f59d" stroke-opacity=".5"/><text x="132" y="139" fill="#aebbb5" font-family="Arial" font-size="16">EURUSD</text><text x="132" y="168" fill="#10f59d" font-family="Arial" font-weight="700" font-size="20">+0.52%</text><rect x="560" y="160" width="160" height="78" rx="16" fill="#101917" stroke="#d9ff45" stroke-opacity=".5"/><text x="580" y="189" fill="#aebbb5" font-family="Arial" font-size="16">PORTFOLIO</text><text x="580" y="218" fill="#d9ff45" font-family="Arial" font-weight="700" font-size="20">$34,453</text><circle cx="660" cy="530" r="60" fill="#10f59d" opacity=".12"/><path d="M635 565c26-63 51-73 75-119" fill="none" stroke="#10f59d" stroke-width="3"/><circle cx="710" cy="446" r="7" fill="#d9ff45"/></svg>
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 700">
+<defs>
+ <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#111c18"/><stop offset=".55" stop-color="#0b1411"/><stop offset="1" stop-color="#07100d"/></linearGradient>
+ <linearGradient id="lime" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#f4ff63"/><stop offset="1" stop-color="#9dff3e"/></linearGradient>
+ <linearGradient id="skin" x1=".2" y1="0" x2=".8" y2="1"><stop stop-color="#f2c7ad"/><stop offset="1" stop-color="#bd8269"/></linearGradient>
+ <linearGradient id="hair" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#201916"/><stop offset=".55" stop-color="#0b0d0c"/><stop offset="1" stop-color="#30231e"/></linearGradient>
+ <linearGradient id="suit" x1="0" y1="0" x2="1" y2="1"><stop stop-color="#202b27"/><stop offset="1" stop-color="#090e0d"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="12" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <filter id="soft"><feGaussianBlur stdDeviation="25"/></filter>
+</defs>
+<rect width="800" height="700" rx="36" fill="url(#bg)"/>
+<circle cx="385" cy="355" r="260" fill="#10f59d" opacity=".055" filter="url(#soft)"/>
+<path d="M90 0h260L235 700H0z" fill="url(#lime)" opacity=".96"/>
+<path d="M0 80h800M0 160h800M0 240h800M0 320h800M0 400h800M0 480h800M0 560h800M0 640h800M80 0v700M160 0v700M240 0v700M320 0v700M400 0v700M480 0v700M560 0v700M640 0v700M720 0v700" stroke="#fff" opacity=".065"/>
+<path d="M70 520C175 390 240 610 355 505S555 380 720 465" fill="none" stroke="#10f59d" stroke-width="3" opacity=".28"/>
+<path d="M55 545C180 415 250 630 370 520S570 405 750 490" fill="none" stroke="#d9ff45" stroke-width="1.5" opacity=".32"/>
+<ellipse cx="390" cy="640" rx="190" ry="32" fill="#000" opacity=".45"/>
+
+<!-- woman -->
+<path d="M250 640c10-130 30-245 78-290 35-33 83-47 128-30 65 25 103 103 119 320H250Z" fill="url(#suit)"/>
+<path d="M352 356c23 35 54 53 86 0l42 45-34 87-51-53-49 53-34-87z" fill="#f0f5f1"/>
+<path d="M344 348c18 32 44 48 68 48 28 0 54-17 70-48l18 18c-14 54-48 82-88 82s-74-28-88-82z" fill="#111817"/>
+<!-- hair behind -->
+<path d="M322 250c-13-93 43-168 127-169 86-1 143 78 119 174l-18 176-55-28 15-124c-13 20-32 35-55 43-43 15-96 4-129-29l-6 119-54 31z" fill="url(#hair)"/>
+<!-- neck and face -->
+<path d="M386 291v72c21 23 52 34 78 0v-72z" fill="url(#skin)"/>
+<path d="M357 180c16-48 88-73 139-32 29 24 38 61 29 106-8 39-38 79-82 86-42-2-76-34-88-74-9-31-8-61 2-86z" fill="url(#skin)"/>
+<!-- hair cap -->
+<path d="M350 202c-3-65 42-112 101-115 70-4 112 51 106 120-29-29-57-42-101-43-38-1-72 11-106 38z" fill="url(#hair)"/>
+<path d="M351 202c-14 46-12 93 13 129l-28 75c-38-57-50-134-25-199 25-66 80-108 140-111-50 19-85 55-100 106z" fill="#171716"/>
+<path d="M546 198c20 51 18 101-9 143l29 65c38-62 46-144 17-207-25-54-75-88-127-96 42 24 73 52 90 95z" fill="#171716"/>
+<!-- face details -->
+<path d="M395 246c10-7 22-7 31 0M468 246c10-7 22-7 31 0" fill="none" stroke="#553b34" stroke-width="3" stroke-linecap="round"/>
+<path d="M408 260c0 11 1 19 7 23M462 283c10 7 22 7 31 0" fill="none" stroke="#75483d" stroke-width="2.5" stroke-linecap="round"/>
+<path d="M425 307c12 8 29 8 42 0" fill="none" stroke="#8c4f45" stroke-width="3" stroke-linecap="round"/>
+<!-- glasses -->
+<g fill="none" stroke="#1c2522" stroke-width="5"><rect x="382" y="238" width="51" height="30" rx="9"/><rect x="451" y="238" width="51" height="30" rx="9"/><path d="M433 248h18"/></g>
+<!-- arms/hands -->
+<path d="M294 414c48 30 76 78 102 131l-50 31c-35-55-69-91-108-111z" fill="url(#suit)"/>
+<path d="M514 414c-43 31-75 79-100 131l49 31c34-54 67-91 107-111z" fill="url(#suit)"/>
+<path d="M389 505c25-18 57-17 82 0l-3 90c-25 22-53 22-78 0z" fill="url(#skin)"/>
+<!-- phone -->
+<g transform="rotate(-4 430 550)">
+ <rect x="380" y="465" width="105" height="170" rx="16" fill="#080d0c" stroke="#59655f" stroke-width="3"/>
+ <rect x="389" y="477" width="87" height="137" rx="10" fill="#101816" stroke="#10f59d" stroke-width="2"/>
+ <path d="M400 579c16-39 22 9 34-28 10-31 18 19 34-18" fill="none" stroke="#d9ff45" stroke-width="3"/>
+ <circle cx="433" cy="623" r="4" fill="#68756f"/>
+</g>
+<!-- floating UI cards -->
+<g transform="rotate(-5 165 185)">
+ <rect x="62" y="132" width="190" height="84" rx="17" fill="#0b1713" stroke="#10f59d" stroke-opacity=".7"/>
+ <circle cx="88" cy="159" r="13" fill="#10f59d" opacity=".12"/><path d="M82 167v-16h4v16h-4Zm8 0v-24h4v24h-4Zm8 0v-11h4v11h-4Z" fill="#10f59d"/>
+ <text x="118" y="162" fill="#f4f7f5" font-family="Arial" font-size="16" font-weight="700">Trade Anywhere</text>
+ <text x="118" y="187" fill="#8fa39a" font-family="Arial" font-size="12">Web, iOS &amp; Android</text>
+</g>
+<g transform="rotate(-4 620 178)">
+ <rect x="530" y="135" width="195" height="84" rx="17" fill="#0b1713" stroke="#d9ff45" stroke-opacity=".5"/>
+ <text x="552" y="163" fill="#8fa39a" font-family="Arial" font-size="12">LIVE MARKET DATA</text>
+ <text x="552" y="195" fill="#10f59d" font-family="Arial" font-size="23" font-weight="700">+2.91%</text>
+ <path d="M650 197l18-20 12 11 22-29" fill="none" stroke="#d9ff45" stroke-width="3"/>
+</g>
+<g transform="rotate(4 180 360)">
+ <rect x="68" y="320" width="205" height="80" rx="17" fill="#0b1713" stroke="#10f59d" stroke-opacity=".6"/>
+ <circle cx="94" cy="347" r="15" fill="#10f59d" opacity=".15"/><path d="m86 347 6 6 12-15" fill="none" stroke="#10f59d" stroke-width="3" stroke-linecap="round"/>
+ <text x="120" y="350" fill="#f4f7f5" font-family="Arial" font-size="15" font-weight="700">Secure &amp; Trusted</text>
+ <text x="120" y="374" fill="#8fa39a" font-family="Arial" font-size="11">Your funds, our priority</text>
+</g>
+<g>
+ <rect x="520" y="478" width="205" height="112" rx="18" fill="#f5f7f6"/>
+ <text x="542" y="505" fill="#68736e" font-family="Arial" font-size="11">Total Balance</text>
+ <text x="542" y="535" fill="#111816" font-family="Arial" font-size="23" font-weight="700">$34,453.09</text>
+ <text x="542" y="559" fill="#10b978" font-family="Arial" font-size="11" font-weight="700">+2.91% Today</text>
+ <circle cx="694" cy="510" r="17" fill="#d9ff45"/><path d="m687 512 7-7 7 7M694 505v13" fill="none" stroke="#102018" stroke-width="2.5" stroke-linecap="round"/>
+ <path d="M615 570c20-19 31 7 44-13 11-17 19 7 36-20" fill="none" stroke="#10c982" stroke-width="3"/>
+</g>
+</svg>
