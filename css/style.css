@@ -1484,3 +1484,18 @@ body{
     background:var(--page-cinematic)!important;
   }
 }
+
+
+/* V1.20 — Restore the original hero artwork; use its palette, never replace the image */
+.hero{
+  background-color:#06130f!important;
+  background-image:url("../assets/forex-hero-background.png")!important;
+  background-size:cover!important;
+  background-position:center center!important;
+  background-repeat:no-repeat!important;
+}
+
+/* The global palette lives around the artwork; it must never erase the hero image. */
+.hero.section-pad{
+  background-image:url("../assets/forex-hero-background.png")!important;
+}
