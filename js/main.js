@@ -41,3 +41,29 @@ document.addEventListener("DOMContentLoaded",()=>{const menu=document.querySelec
     },{threshold:.2});
     statsObserver.observe(statsSection);
   }const prev=document.querySelector(".prev"),next=document.querySelector(".next"),track=document.querySelector(".testimonial-track");let x=0;const slide=d=>{if(!track)return;const card=track.querySelector(".testimonial");if(!card)return;x+=d;const max=Math.max(0,track.children.length-1);x=Math.max(0,Math.min(max,x));if(window.innerWidth<=900){track.style.transform=`translateX(-${x*100}%)`;track.style.display="flex";track.style.transition="transform .35s ease";track.children[0].style.minWidth="100%";[...track.children].forEach(c=>c.style.minWidth="100%")} };prev?.addEventListener("click",()=>slide(-1));next?.addEventListener("click",()=>slide(1));window.addEventListener("resize",()=>{if(track&&window.innerWidth>900){track.style.transform="";track.style.display="grid";[...track.children].forEach(c=>c.style.minWidth="")}});document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener("click",e=>{const id=a.getAttribute("href");if(id&&id!=="#"){const target=document.querySelector(id);if(target){e.preventDefault();target.scrollIntoView({behavior:"smooth",block:"start"})}}}));});
+
+  // Premium trader visual parallax: move only decorative layers for a lightweight depth effect.
+  const traderStage=document.querySelector(".girl-stage");
+  if(traderStage && !window.matchMedia("(prefers-reduced-motion: reduce)").matches){
+    const layers=[
+      [".market-glow-a",5],[ ".market-glow-b",-4],
+      [".market-orbit-a",3],[ ".market-orbit-b",-4],
+      [".girl-aura",2],[ ".girl-stage .lime-shape",1]
+    ];
+    traderStage.addEventListener("pointermove",e=>{
+      const r=traderStage.getBoundingClientRect();
+      const x=(e.clientX-r.left)/r.width-.5;
+      const y=(e.clientY-r.top)/r.height-.5;
+      layers.forEach(([selector,depth])=>{
+        const el=traderStage.querySelector(selector);
+        if(el) el.style.translate=`${x*depth}px ${y*depth}px`;
+      });
+    });
+    traderStage.addEventListener("pointerleave",()=>{
+      layers.forEach(([selector])=>{
+        const el=traderStage.querySelector(selector);
+        if(el) el.style.translate="";
+      });
+    });
+  }
+});
