@@ -1120,3 +1120,166 @@
 @media(prefers-reduced-motion:reduce){
   .market-bg *,.lime-shape,.lime-glow,.girl-aura,.girl-placeholder img,.visual-card,.crypto-float,.balance-card,.success-script,.card-spark,.balance-card svg{animation:none!important}
 }
+
+
+/* V1.17 — Remove artificial image/card container; make trader visual part of the page */
+.feature-section{
+  overflow:visible;
+  background:
+    radial-gradient(circle at 20% 48%, rgba(16,245,157,.055), transparent 30%),
+    radial-gradient(circle at 72% 38%, rgba(217,255,69,.025), transparent 32%),
+    linear-gradient(180deg,#06130f 0%,#071712 48%,#050d0a 100%);
+}
+
+.feature-section .split-grid{
+  position:relative;
+  z-index:1;
+}
+
+.girl-stage{
+  position:relative;
+  min-height:500px;
+  border:0!important;
+  border-radius:0!important;
+  background:transparent!important;
+  box-shadow:none!important;
+  overflow:visible!important;
+  isolation:isolate;
+}
+
+/* The animated market/grid treatment belongs to the section itself, not a boxed image panel. */
+.girl-stage .market-bg{
+  position:absolute;
+  inset:-70px -55px -45px -70px;
+  overflow:hidden;
+  border-radius:0;
+  pointer-events:none;
+  z-index:0;
+  -webkit-mask-image:linear-gradient(90deg,black 0%,black 78%,transparent 100%);
+  mask-image:linear-gradient(90deg,black 0%,black 78%,transparent 100%);
+}
+
+.girl-stage .market-grid{
+  opacity:.30;
+}
+
+.girl-stage .market-ring{
+  left:0;
+  top:12px;
+}
+
+.girl-stage .lime-shape{
+  z-index:2;
+}
+
+.girl-stage .girl-aura{
+  z-index:3;
+}
+
+.girl-placeholder{
+  z-index:5;
+}
+
+/* Floating UI cards stay independent; they are not a container behind the woman. */
+.visual-card,
+.crypto-float,
+.balance-card{
+  z-index:7;
+}
+
+/* Reference uses a clean vertical checklist rather than a boxed two-column grid. */
+.feature-copy .check-grid{
+  display:grid;
+  grid-template-columns:1fr;
+  gap:13px;
+  max-width:540px;
+  margin-top:24px;
+}
+
+.feature-copy .check-grid>div{
+  min-height:28px;
+  align-items:center;
+}
+
+.feature-copy .check-grid>div>b{
+  width:18px;
+  height:18px;
+  flex-basis:18px;
+}
+
+.feature-copy .check-grid small{
+  margin-top:3px;
+}
+
+/* Keep the handwritten note floating on the page, not inside the visual. */
+.success-script{
+  z-index:4;
+  right:3.2%;
+}
+
+/* Desktop: let the woman breathe beyond the former panel edges. */
+@media(min-width:901px){
+  .girl-stage{
+    min-height:520px;
+    margin-left:-8px;
+    margin-right:-18px;
+  }
+
+  .girl-placeholder{
+    left:8%;
+    width:68%;
+    height:108%;
+    bottom:-4%;
+  }
+
+  .lime-shape{
+    left:10%;
+    top:3%;
+  }
+
+  .visual-card-trade{
+    left:12px;
+    top:84px;
+  }
+
+  .visual-card-security{
+    left:15px;
+    top:224px;
+  }
+
+  .visual-card-market{
+    right:18px;
+    top:42px;
+  }
+
+  .crypto-float{
+    right:25px;
+    top:176px;
+  }
+
+  .balance-card{
+    right:22px;
+    bottom:28px;
+  }
+}
+
+@media(max-width:900px){
+  .girl-stage{
+    min-height:500px;
+    margin:0;
+  }
+
+  .girl-stage .market-bg{
+    inset:-35px -25px -25px -25px;
+  }
+}
+
+@media(max-width:620px){
+  .girl-stage{
+    min-height:430px;
+  }
+
+  .girl-stage .market-bg{
+    inset:-20px -18px -20px -18px;
+  }
+}
