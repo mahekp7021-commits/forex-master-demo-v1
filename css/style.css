@@ -1774,3 +1774,146 @@ body{
     font-size:44px!important;
   }
 }
+
+
+/* V1.24 — Pixel-position pass for trader visual based on supplied reference */
+@media(min-width:1101px){
+  .feature-section .split-grid{
+    grid-template-columns:620px 470px!important;
+    gap:28px!important;
+  }
+
+  .girl-stage{
+    height:444px!important;
+    min-height:444px!important;
+  }
+
+  /* Reference: lime geometry is broad, tall and sits behind the woman. */
+  .lime-shape{
+    left:9%!important;
+    top:20px!important;
+    width:450px!important;
+    height:425px!important;
+    clip-path:polygon(29% 0,100% 0,82% 100%,0 100%)!important;
+    background:linear-gradient(180deg,#efff55 0%,#baff48 52%,#70dc3c 100%)!important;
+  }
+
+  .lime-glow{
+    left:0%!important;
+    top:37%!important;
+    width:88%!important;
+    height:43%!important;
+  }
+
+  /* Reference woman: larger, higher and distinctly left of center. */
+  .girl-placeholder{
+    left:8%!important;
+    width:68%!important;
+    height:116%!important;
+    bottom:-8%!important;
+  }
+
+  .girl-placeholder img{
+    transform:scale(1.16)!important;
+  }
+
+  .girl-aura{
+    left:8%!important;
+    bottom:-18%!important;
+    width:430px!important;
+    height:455px!important;
+  }
+
+  /* Reference floating cards: larger, closer to the woman and staggered vertically. */
+  .visual-card{
+    min-width:0!important;
+    padding:12px 14px!important;
+    border-radius:10px!important;
+  }
+
+  .visual-card-icon{
+    width:36px!important;
+    height:36px!important;
+    flex-basis:36px!important;
+  }
+
+  .visual-card strong{
+    font-size:12px!important;
+  }
+
+  .visual-card small{
+    font-size:9px!important;
+    margin-top:4px!important;
+  }
+
+  .visual-card-trade{
+    left:14px!important;
+    top:72px!important;
+    width:178px!important;
+  }
+
+  .visual-card-security{
+    left:18px!important;
+    top:202px!important;
+    width:188px!important;
+  }
+
+  .visual-card-market{
+    right:20px!important;
+    top:45px!important;
+    width:181px!important;
+  }
+
+  .crypto-float{
+    right:25px!important;
+    top:154px!important;
+    padding:8px 10px!important;
+    gap:8px!important;
+  }
+
+  .crypto-float span{
+    width:30px!important;
+    height:30px!important;
+    font-size:14px!important;
+  }
+
+  .balance-card{
+    right:12px!important;
+    bottom:30px!important;
+    min-width:0!important;
+    width:212px!important;
+    padding:14px 16px 13px!important;
+  }
+
+  .balance-card strong{
+    font-size:20px!important;
+  }
+
+  /* Keep the right copy from drifting into the visual composition. */
+  .feature-copy{
+    padding-top:42px!important;
+  }
+
+  .feature-copy h2{
+    font-size:48px!important;
+    line-height:.98!important;
+  }
+
+  .feature-copy p{
+    max-width:500px!important;
+  }
+
+  .feature-copy .check-grid{
+    margin-top:18px!important;
+    gap:11px!important;
+  }
+
+  .feature-learn{
+    margin-top:17px!important;
+  }
+
+  .success-script{
+    right:5.5%!important;
+    top:72%!important;
+  }
+}
