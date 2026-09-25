@@ -285,3 +285,66 @@
     min-width:178px!important;
   }
 }
+
+
+/* V1.9 — Premium hero feature points */
+.hero-points{
+  display:grid;
+  grid-template-columns:repeat(3,minmax(0,1fr));
+  gap:24px;
+  margin-top:38px;
+  max-width:640px;
+}
+.hero-points>div{
+  display:flex;
+  align-items:center;
+  gap:11px;
+  min-width:0;
+}
+.hero-points .point-icon{
+  width:44px;
+  height:44px;
+  flex:0 0 44px;
+  display:grid;
+  place-items:center;
+  border:2px solid rgba(16,245,157,.88);
+  border-radius:50%;
+  color:var(--green);
+  background:rgba(16,245,157,.045);
+  box-shadow:0 0 10px rgba(16,245,157,.25),inset 0 0 10px rgba(16,245,157,.06);
+}
+.hero-points .point-icon svg{
+  width:20px;
+  height:20px;
+  display:block;
+  fill:none;
+  stroke:currentColor;
+  stroke-width:1.8;
+  stroke-linecap:round;
+  stroke-linejoin:round;
+}
+.hero-points>div:nth-child(2) .point-icon svg{
+  fill:currentColor;
+  stroke:none;
+}
+.hero-points span{
+  font-weight:700;
+  font-size:14px;
+  line-height:1.15;
+  white-space:nowrap;
+}
+.hero-points small{
+  display:block;
+  color:var(--muted);
+  font-size:11px;
+  font-weight:400;
+  line-height:1.25;
+  margin-top:5px;
+  white-space:nowrap;
+}
+@media(max-width:1100px) and (min-width:621px){
+  .hero-points{
+    margin-left:auto;
+    margin-right:auto;
+  }
+}
