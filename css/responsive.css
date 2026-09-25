@@ -2,3 +2,23 @@
 @media(max-width:620px){.service-card:hover,.price-card:hover,.testimonial:hover,.news-card:hover{transform:none}.float-card{font-size:12px}.float-card small{font-size:10px}.balance-card{right:15px;bottom:25px;padding:11px 13px}.balance-card strong{font-size:16px}}
 
 /* Finlogix widgets keep their native dimensions on mobile too. */
+
+/* V1.16 responsive overrides for reference-matched trader visual */
+@media(max-width:900px){
+  .feature-section .split-grid{gap:34px}
+  .girl-stage{min-height:500px!important}
+  .girl-placeholder{left:8%!important;width:70%!important;height:103%!important}
+}
+@media(max-width:620px){
+  .girl-stage{min-height:430px!important}
+  .girl-placeholder{left:1%!important;width:83%!important;height:101%!important}
+  .girl-placeholder img{transform:scale(1.02)!important}
+  .lime-shape{left:4%!important;top:8%!important;width:265px!important;height:410px!important}
+  .lime-glow{left:0!important;top:29%!important;width:79%!important}
+  .visual-card{min-width:145px!important;padding:8px 9px!important}
+  .visual-card-trade{left:9px!important;top:56px!important}
+  .visual-card-security{left:9px!important;top:172px!important}
+  .visual-card-market{right:8px!important;top:36px!important}
+  .crypto-float{right:12px!important;top:120px!important}
+  .balance-card{right:8px!important;bottom:17px!important;min-width:170px!important}
+}
