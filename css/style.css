@@ -1499,3 +1499,34 @@ body{
 .hero.section-pad{
   background-image:url("../assets/forex-hero-background.png")!important;
 }
+
+
+/* V1.21 — Exact page background tone from supplied reference swatch */
+:root{
+  --page-cinematic:#030c0b;
+}
+
+html,
+body{
+  background-color:#030c0b!important;
+}
+
+/* Only the page's underlying background layer. Existing artwork/components remain untouched. */
+.stats,
+.feature-section,
+.services,
+.platform,
+.pricing,
+.testimonials,
+.faq,
+.news,
+.cta-section,
+.site-footer{
+  background-color:#030c0b!important;
+}
+
+/* Hero artwork remains exactly as-is. */
+.hero{
+  background-color:#030c0b!important;
+  background-image:url("../assets/forex-hero-background.png")!important;
+}
