@@ -1530,3 +1530,31 @@ body{
   background-color:#030c0b!important;
   background-image:url("../assets/forex-hero-background.png")!important;
 }
+
+
+/* V1.22 — Stats glass card using the supplied deep green reference tone */
+.stats-grid{
+  background:
+    linear-gradient(
+      180deg,
+      rgba(12,28,22,.88) 0%,
+      rgba(12,28,22,.72) 48%,
+      rgba(12,28,22,.84) 100%
+    )!important;
+  border:1px solid rgba(16,245,157,.20)!important;
+  box-shadow:
+    0 18px 45px rgba(0,0,0,.24),
+    inset 0 1px 0 rgba(255,255,255,.035),
+    inset 0 0 28px rgba(16,245,157,.025)!important;
+  backdrop-filter:blur(14px)!important;
+  -webkit-backdrop-filter:blur(14px)!important;
+}
+
+.stats-grid .stat{
+  background:transparent!important;
+  border-right:1px solid rgba(16,245,157,.11)!important;
+}
+
+.stats-grid .stat:last-child{
+  border-right:0!important;
+}
