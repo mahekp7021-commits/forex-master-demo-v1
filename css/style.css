@@ -348,3 +348,43 @@
     margin-right:auto;
   }
 }
+
+
+/* V1.10 — Larger transparent glass stats card */
+.stats-grid{
+  width:calc(100% + 80px);
+  margin-left:-40px;
+  min-height:116px;
+  border:1px solid rgba(16,245,157,.18);
+  border-radius:18px;
+  background:rgba(8,24,18,.34);
+  box-shadow:0 14px 45px rgba(0,0,0,.16),inset 0 0 30px rgba(16,245,157,.025);
+  backdrop-filter:blur(14px) saturate(125%);
+  -webkit-backdrop-filter:blur(14px) saturate(125%);
+}
+.stat{
+  min-height:116px;
+  padding:30px 30px;
+  gap:17px;
+  border-right:1px solid rgba(16,245,157,.10);
+}
+.stat-icon{
+  width:52px;
+  height:52px;
+  flex:0 0 52px;
+  background:rgba(217,255,69,.085);
+  box-shadow:0 0 16px rgba(217,255,69,.06),inset 0 0 12px rgba(217,255,69,.04);
+  font-size:19px;
+}
+.stat strong{font-size:31px}
+.stat span{font-size:13px;margin-top:6px}
+@media(max-width:1100px){
+  .stats-grid{width:100%;margin-left:0}
+  .stat{padding:26px 22px}
+}
+@media(max-width:620px){
+  .stats-grid{min-height:0}
+  .stat{min-height:92px;padding:20px 18px}
+  .stat-icon{width:46px;height:46px;flex-basis:46px}
+  .stat strong{font-size:27px}
+}
