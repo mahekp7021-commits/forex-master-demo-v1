@@ -228,4 +228,51 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelectorAll(".nav-menu[open]").forEach((item) => {
       if (!item.contains(event.target)) item.removeAttribute("open");
     });
+  
+
+const MASTER_NAV = {
+  root: "",
+  items: [
+    ["Home","index.html"],
+    ["Markets", [["Forex","forex.html"],["Commodities","commodities.html"],["Indices","indices.html"],["Shares CFDs","stocks.html"],["Cryptocurrency","crypto.html"]]],
+    ["Trading", [["Account Types","accounts.html"],["Trading Conditions","trading-conditions.html"],["Platforms","platforms.html"],["How to Start","trading-guides.html"],["Open Account","signup.html"],["Deposit","deposit-withdrawal.html"],["Withdrawal","deposit-withdrawal.html"]]],
+    ["Platforms", [["MetaTrader 4","platforms.html"],["MetaTrader 5","platforms.html"],["WebTrader","platforms.html"]]],
+    ["Accounts", [["Standard","accounts.html"],["Premium","accounts.html"],["Professional","accounts.html"]]],
+    ["Tools", [["Live Markets","markets.html"],["Economic Calendar","economic-calendar.html"]]],
+    ["Company", [["About Us","about.html"],["Contact Us","contact.html"],["Benefits","why-forex.html"]]],
+    ["Partnership","partners.html"]
+  ]
+};
+
+const buildMasterNav = () => {
+  const nav=document.querySelector(".main-nav");
+  if(!nav) return;
+  const base=location.pathname.includes("/") ? "" : "";
+  const isNested=location.pathname.split("/").filter(Boolean).length>1;
+  const prefix=isNested?"../":"";
+  nav.innerHTML="";
+  MASTER_NAV.items.forEach(item=>{
+    if(typeof item[1]==="string"){
+      const a=document.createElement("a"); a.className="nav-link"; a.href=prefix+item[1]; a.textContent=item[0]; nav.appendChild(a); return;
+    }
+    const wrap=document.createElement("div"); wrap.className="nav-item";
+    const btn=document.createElement("button"); btn.type="button"; btn.className="nav-trigger"; btn.setAttribute("aria-expanded","false");
+    btn.innerHTML='<span>'+item[0]+'</span><em>⌄</em>';
+    const drop=document.createElement("div"); drop.className="dropdown";
+    item[1].forEach(([label,href])=>{const a=document.createElement("a");a.href=prefix+href;a.innerHTML='<span>'+label+'</span>';drop.appendChild(a);});
+    wrap.append(btn,drop); nav.appendChild(wrap);
   });
+  nav.querySelectorAll(".nav-trigger").forEach(btn=>{
+    btn.addEventListener("click",e=>{
+      e.stopPropagation();
+      const item=btn.parentElement, open=item.classList.toggle("is-open");
+      btn.setAttribute("aria-expanded",String(open));
+      nav.querySelectorAll(".nav-item").forEach(other=>{if(other!==item)other.classList.remove("is-open")});
+    });
+  });
+  nav.querySelectorAll("a").forEach(a=>a.addEventListener("click",()=>{nav.classList.remove("open","is-open");}));
+};
+buildMasterNav();
+document.addEventListener("click",()=>document.querySelectorAll(".nav-item.is-open").forEach(x=>x.classList.remove("is-open")));
+
+});
