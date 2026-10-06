@@ -206,10 +206,90 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
 
-  // Close open dropdowns when clicking outside.
-  document.addEventListener("click", (event) => {
-    document.querySelectorAll(".nav-menu[open]").forEach((item) => {
-      if (!item.contains(event.target)) item.removeAttribute("open");
+
+  // Canonical multi-level navigation based on reviewed source-site information architecture.
+  const masterNavItems = [
+    ["Home","index.html"],
+    ["Markets",[
+      ["Forex","forex.html"],["Commodities","commodities.html"],["Indices","indices.html"],
+      ["Shares CFDs","stocks.html"],["Cryptocurrency","crypto.html"]
+    ]],
+    ["Trading",[
+      ["Account Types","accounts.html"],["Trading Conditions","trading-conditions.html"],
+      ["Platforms","platforms.html"],["How to Start","trading-guides.html"],
+      ["Open Account","signup.html"],["Deposit","deposit-withdrawal.html"],["Withdrawal","deposit-withdrawal.html"]
+    ]],
+    ["Platforms",[
+      ["MetaTrader 4","platforms.html"],["MetaTrader 5","platforms.html"],["WebTrader","platforms.html"]
+    ]],
+    ["Accounts",[
+      ["Standard","accounts.html"],["Premium","accounts.html"],["Professional","accounts.html"]
+    ]],
+    ["Tools",[
+      ["Live Markets","markets.html"],["Economic Calendar","economic-calendar.html"],
+      ["Trading Calculator","trading-calculator.html"],["VPS Hosting","vps.html"],["Trading Signals","trading-signals.html"]
+    ]],
+    ["Company",[
+      ["About Us","about.html"],["Contact Us","contact.html"],["Benefits","why-forex.html"],["Careers","careers.html"]
+    ]],
+    ["Partnership","partners.html"],
+    ["Resources",[
+      ["Resource Center","resources.html"],["Blog & News","blog.html"],["Promotions","promotions.html"],
+      ["Downloads","downloads.html"],["Help & Support","support.html"],["Legal Center","legal.html"]
+    ]]
+  ];
+
+  const buildMasterNav = () => {
+    const nav = document.querySelector(".main-nav");
+    if (!nav) return;
+    const nested = location.pathname.split("/").filter(Boolean).length > 1;
+    const prefix = nested ? "../" : "";
+    nav.innerHTML = "";
+    masterNavItems.forEach(([label, target]) => {
+      if (typeof target === "string") {
+        const a = document.createElement("a");
+        a.className = "nav-link";
+        a.href = prefix + target;
+        a.textContent = label;
+        nav.appendChild(a);
+        return;
+      }
+      const item = document.createElement("div");
+      item.className = "nav-item";
+      const trigger = document.createElement("button");
+      trigger.type = "button";
+      trigger.className = "nav-trigger";
+      trigger.setAttribute("aria-expanded","false");
+      trigger.innerHTML = "<span>"+label+"</span><em>⌄</em>";
+      const dropdown = document.createElement("div");
+      dropdown.className = "dropdown";
+      target.forEach(([childLabel, childTarget]) => {
+        const a = document.createElement("a");
+        a.href = prefix + childTarget;
+        a.innerHTML = "<span>"+childLabel+"</span>";
+        dropdown.appendChild(a);
+      });
+      item.append(trigger, dropdown);
+      nav.appendChild(item);
+      trigger.addEventListener("click", (event) => {
+        event.stopPropagation();
+        const open = item.classList.toggle("is-open");
+        trigger.setAttribute("aria-expanded", String(open));
+        nav.querySelectorAll(".nav-item").forEach(other => {
+          if (other !== item) other.classList.remove("is-open");
+        });
+      });
     });
+    nav.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        nav.classList.remove("open","is-open");
+        menu?.setAttribute("aria-expanded","false");
+      });
+    });
+  };
+  buildMasterNav();
+  document.addEventListener("click", () => {
+    document.querySelectorAll(".nav-item.is-open").forEach(item => item.classList.remove("is-open"));
   });
+
 });
