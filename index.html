@@ -10,6 +10,7 @@
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/responsive.css">
+  <link rel="stylesheet" href="css/pages.css">
 </head>
 <body>
   <div class="page-glow page-glow-a"></div>
@@ -28,16 +29,15 @@
 
       <nav class="main-nav" aria-label="Main navigation">
         <a class="active" href="#top">Home</a>
-        <a href="#markets">Markets</a>
-        <a href="#trading">Trading <span>⌄</span></a>
-        <a href="#education">Education <span>⌄</span></a>
-        <a href="#company">Company <span>⌄</span></a>
-        <a href="#resources">Resources <span>⌄</span></a>
+        <details class="nav-menu"><summary>Markets</summary><div class="nav-dropdown"><a href="markets.html">Market Overview</a><a href="forex.html">Forex</a><a href="crypto.html">Crypto</a><a href="stocks.html">Stocks</a><a href="indices.html">Indices</a><a href="commodities.html">Commodities</a></div></details>
+        <details class="nav-menu"><summary>Trading</summary><div class="nav-dropdown"><a href="trading.html">Trading Overview</a><a href="platforms.html">Platforms</a><a href="accounts.html">Accounts</a><a href="deposit-withdrawal.html">Deposit &amp; Withdrawal</a><a href="pricing.html">Pricing &amp; Fees</a></div></details>
+        <details class="nav-menu"><summary>Education</summary><div class="nav-dropdown"><a href="education.html">Education Hub</a><a href="trading-guides.html">Trading Guides</a><a href="market-analysis.html">Market Analysis</a><a href="webinars.html">Webinars</a><a href="faq.html">FAQ</a></div></details>
+        <details class="nav-menu"><summary>Company</summary><div class="nav-dropdown"><a href="about.html">About Us</a><a href="why-forex.html">Why FOREX</a><a href="regulation.html">Regulation</a><a href="careers.html">Careers</a><a href="contact.html">Contact</a></div></details>
+        <details class="nav-menu"><summary>Resources</summary><div class="nav-dropdown"><a href="resources.html">Resource Center</a><a href="blog.html">Blog &amp; News</a><a href="downloads.html">Downloads</a><a href="support.html">Help &amp; Support</a><a href="legal.html">Legal Center</a></div></details>
       </nav>
-
       <div class="nav-actions">
-        <a class="login-link" href="#contact">Login ↗</a>
-        <a class="btn btn-lime btn-small" href="#pricing">Sign Up <span>→</span></a>
+        <a class="login-link" href="login.html">Login ↗</a>
+        <a class="btn btn-lime btn-small" href="signup.html">Sign Up <span>→</span></a>
       </div>
     </div>
   </header>
