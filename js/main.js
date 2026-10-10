@@ -210,68 +210,44 @@ document.addEventListener("DOMContentLoaded", () => {
   // Master demo navigation — adapted from the approved FXCentrum24 reference structure.
   // The reference ZIP remains untouched; all links point to pages inside this demo repo.
   const masterNavItems = [
-    ["Home", "index.html"],
     ["Markets", [
-      ["Market Overview", "markets.html"],
-      ["Forex", "markets/forex.html"],
-      ["Commodities", "markets/commodities.html"],
-      ["Indices", "markets/indices.html"],
-      ["Shares CFDs", "markets/shares-cfds.html"],
-      ["Cryptocurrency", "markets/cryptocurrency.html"]
+      ["Market Overview", "markets.html"], ["Forex", "markets/forex.html"],
+      ["Commodities", "markets/commodities.html"], ["Indices", "markets/indices.html"],
+      ["Shares CFDs", "markets/shares-cfds.html"], ["Cryptocurrency", "markets/cryptocurrency.html"]
     ]],
     ["Trading", [
-      ["Account Types", "trading/account-types.html"],
-      ["Trading Conditions", "trading/trading-conditions.html"],
-      ["Platforms Overview", "trading/platforms.html"],
-      ["How to Start", "trading/how-to-start.html"],
-      ["Account Opening", "trading/account-opening.html"]
+      ["Trading Overview", "trading.html"], ["Account Types", "trading/account-types.html"],
+      ["Trading Conditions", "trading/trading-conditions.html"], ["How to Start", "trading/how-to-start.html"],
+      ["Pricing & Fees", "pricing.html"]
     ]],
     ["Platforms", [
-      ["MetaTrader 4", "platforms/metatrader-4.html"],
-      ["MetaTrader 5", "platforms/metatrader-5.html"],
+      ["MetaTrader 4", "platforms/metatrader-4.html"], ["MetaTrader 5", "platforms/metatrader-5.html"],
       ["WebTrader", "platforms/webtrader.html"]
     ]],
     ["Accounts", [
-      ["Standard", "accounts/standard.html"],
-      ["Premium", "accounts/premium.html"],
-      ["Professional", "accounts/professional.html"]
-    ]],
-    ["Payment", [
-      ["Deposits", "trading/deposit.html"],
-      ["Withdrawals", "trading/withdrawal.html"]
+      ["Standard", "accounts/standard.html"], ["Premium", "accounts/premium.html"],
+      ["Professional", "accounts/professional.html"], ["Open an Account", "trading/account-opening.html"]
     ]],
     ["Tools", [
-      ["Economic Calendar", "tools/economic-calendar.html"],
-      ["Trading Calculator", "trading-calculator.html"],
-      ["Trading Signals", "trading-signals.html"],
-      ["VPS Hosting", "vps.html"]
+      ["Economic Calendar", "tools/economic-calendar.html"], ["Trading Calculator", "trading-calculator.html"],
+      ["Trading Signals", "trading-signals.html"], ["VPS Hosting", "vps.html"]
     ]],
     ["Company", [
-      ["About Us", "company/about.html"],
-      ["Benefits", "company/benefits.html"],
-      ["Contact Us", "company/contact.html"],
-      ["Careers", "careers.html"]
+      ["About Us", "company/about.html"], ["Benefits", "company/benefits.html"],
+      ["Contact Us", "company/contact.html"], ["Careers", "careers.html"],
+      ["Education Hub", "education.html"], ["Trading Guides", "trading-guides.html"],
+      ["Market Analysis", "market-analysis.html"], ["Blog & News", "blog.html"],
+      ["Webinars", "webinars.html"], ["Downloads", "downloads.html"],
+      ["Help & Support", "support.html"], ["FAQ", "faq.html"],
+      ["Legal Center", "legal.html"], ["Client Agreement", "legal/client-agreement.html"],
+      ["Terms & Conditions", "legal/terms-and-conditions.html"], ["Privacy Policy", "legal/privacy-policy.html"],
+      ["Risk Disclosure", "legal/risk-disclosure.html"], ["AML Policy", "legal/aml-policy.html"]
+    ]],
+    ["Payment", [
+      ["Deposits", "trading/deposit.html"], ["Withdrawals", "trading/withdrawal.html"]
     ]],
     ["Partnership", [
-      ["Partnership Programme", "partnership/index.html"],
-      ["Partner Account Opening", "partnership/account-opening.html"]
-    ]],
-    ["Resources", [
-      ["Education Hub", "education.html"],
-      ["Trading Guides", "trading-guides.html"],
-      ["Market Analysis", "market-analysis.html"],
-      ["Blog & News", "blog.html"],
-      ["Webinars", "webinars.html"],
-      ["Downloads", "downloads.html"],
-      ["Help & Support", "support.html"],
-      ["FAQ", "faq.html"]
-    ]],
-    ["Legal", [
-      ["Client Agreement", "legal/client-agreement.html"],
-      ["Terms & Conditions", "legal/terms-and-conditions.html"],
-      ["Privacy Policy", "legal/privacy-policy.html"],
-      ["Risk Disclosure", "legal/risk-disclosure.html"],
-      ["AML Policy", "legal/aml-policy.html"]
+      ["Partnership Programme", "partnership/index.html"], ["Partner Account Opening", "partnership/account-opening.html"]
     ]]
   ];
 
@@ -317,7 +293,7 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = document.createElement("details");
       item.className = "nav-menu";
       const summary = document.createElement("summary");
-      summary.textContent = label;
+      summary.textContent = label;\n      summary.setAttribute("aria-label", label + " menu");
       const dropdown = document.createElement("div");
       dropdown.className = "nav-dropdown";
       target.forEach(([childLabel, childTarget]) => {
