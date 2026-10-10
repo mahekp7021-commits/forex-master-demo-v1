@@ -293,7 +293,8 @@ document.addEventListener("DOMContentLoaded", () => {
       const item = document.createElement("details");
       item.className = "nav-menu";
       const summary = document.createElement("summary");
-      summary.textContent = label;\n      summary.setAttribute("aria-label", label + " menu");
+      summary.textContent = label;
+      summary.setAttribute("aria-label", label + " menu");
       const dropdown = document.createElement("div");
       dropdown.className = "nav-dropdown";
       target.forEach(([childLabel, childTarget]) => {
