@@ -332,6 +332,15 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   buildMasterNav();
 
+  // Close the mobile menu after selecting a destination.
+  document.querySelectorAll(".main-nav a").forEach((link) => {
+    link.addEventListener("click", () => {
+      const currentNav = document.querySelector(".main-nav");
+      currentNav?.classList.remove("open", "is-open");
+      menu?.setAttribute("aria-expanded", "false");
+    });
+  });
+
   document.addEventListener("click", (event) => {
     document.querySelectorAll(".nav-menu[open]").forEach((item) => {
       if (!item.contains(event.target)) item.removeAttribute("open");
