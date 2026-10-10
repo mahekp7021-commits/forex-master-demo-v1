@@ -207,18 +207,72 @@ document.addEventListener("DOMContentLoaded", () => {
 
 
 
-  // Master demo navigation — keep Payment separate from Trading.
+  // Master demo navigation — adapted from the approved FXCentrum24 reference structure.
+  // The reference ZIP remains untouched; all links point to pages inside this demo repo.
   const masterNavItems = [
-    ["Home","index.html"],
-    ["Markets",[["Forex","forex.html"],["Commodities","commodities.html"],["Indices","indices.html"],["Shares CFDs","stocks.html"],["Cryptocurrency","crypto.html"]]],
-    ["Trading",[["Account Types","accounts.html"],["Trading Conditions","trading-conditions.html"],["Platforms","platforms.html"],["How to Start","trading-guides.html"]]],
-    ["Payment",[["Deposits","deposit-withdrawal.html"],["Withdrawals","deposit-withdrawal.html"]]],
-    ["Platforms",[["MetaTrader 4","platforms.html"],["MetaTrader 5","platforms.html"],["WebTrader","platforms.html"]]],
-    ["Accounts",[["Standard","accounts.html"],["Premium","accounts.html"],["Professional","accounts.html"]]],
-    ["Tools",[["Live Markets","markets.html"],["Economic Calendar","economic-calendar.html"],["Trading Calculator","trading-calculator.html"],["VPS Hosting","vps.html"],["Trading Signals","trading-signals.html"]]],
-    ["Company",[["About Us","about.html"],["Contact Us","contact.html"],["Benefits","why-forex.html"],["Careers","careers.html"]]],
-    ["Partnership","partners.html"],
-    ["Resources",[["Resource Center","resources.html"],["Blog & News","blog.html"],["Promotions","promotions.html"],["Downloads","downloads.html"],["Help & Support","support.html"],["Legal Center","legal.html"]]]
+    ["Home", "index.html"],
+    ["Markets", [
+      ["Market Overview", "markets.html"],
+      ["Forex", "markets/forex.html"],
+      ["Commodities", "markets/commodities.html"],
+      ["Indices", "markets/indices.html"],
+      ["Shares CFDs", "markets/shares-cfds.html"],
+      ["Cryptocurrency", "markets/cryptocurrency.html"]
+    ]],
+    ["Trading", [
+      ["Account Types", "trading/account-types.html"],
+      ["Trading Conditions", "trading/trading-conditions.html"],
+      ["Platforms Overview", "trading/platforms.html"],
+      ["How to Start", "trading/how-to-start.html"],
+      ["Account Opening", "trading/account-opening.html"]
+    ]],
+    ["Platforms", [
+      ["MetaTrader 4", "platforms/metatrader-4.html"],
+      ["MetaTrader 5", "platforms/metatrader-5.html"],
+      ["WebTrader", "platforms/webtrader.html"]
+    ]],
+    ["Accounts", [
+      ["Standard", "accounts/standard.html"],
+      ["Premium", "accounts/premium.html"],
+      ["Professional", "accounts/professional.html"]
+    ]],
+    ["Payment", [
+      ["Deposits", "trading/deposit.html"],
+      ["Withdrawals", "trading/withdrawal.html"]
+    ]],
+    ["Tools", [
+      ["Economic Calendar", "tools/economic-calendar.html"],
+      ["Trading Calculator", "trading-calculator.html"],
+      ["Trading Signals", "trading-signals.html"],
+      ["VPS Hosting", "vps.html"]
+    ]],
+    ["Company", [
+      ["About Us", "company/about.html"],
+      ["Benefits", "company/benefits.html"],
+      ["Contact Us", "company/contact.html"],
+      ["Careers", "careers.html"]
+    ]],
+    ["Partnership", [
+      ["Partnership Programme", "partnership/index.html"],
+      ["Partner Account Opening", "partnership/account-opening.html"]
+    ]],
+    ["Resources", [
+      ["Education Hub", "education.html"],
+      ["Trading Guides", "trading-guides.html"],
+      ["Market Analysis", "market-analysis.html"],
+      ["Blog & News", "blog.html"],
+      ["Webinars", "webinars.html"],
+      ["Downloads", "downloads.html"],
+      ["Help & Support", "support.html"],
+      ["FAQ", "faq.html"]
+    ]],
+    ["Legal", [
+      ["Client Agreement", "legal/client-agreement.html"],
+      ["Terms & Conditions", "legal/terms-and-conditions.html"],
+      ["Privacy Policy", "legal/privacy-policy.html"],
+      ["Risk Disclosure", "legal/risk-disclosure.html"],
+      ["AML Policy", "legal/aml-policy.html"]
+    ]]
   ];
 
   const buildMasterNav = () => {
@@ -226,6 +280,31 @@ document.addEventListener("DOMContentLoaded", () => {
     if (!nav) return;
     const nested = location.pathname.split("/").filter(Boolean).length > 1;
     const prefix = nested ? "../" : "";
+
+    // The imported source pages use a different header stylesheet; normalize the
+    // generated menu so the same navigation works on every page and on mobile.
+    if (!document.getElementById("forex-master-nav-compat")) {
+      const navStyle = document.createElement("style");
+      navStyle.id = "forex-master-nav-compat";
+      navStyle.textContent = `
+        .main-nav .nav-menu{position:relative;display:block;flex:0 0 auto}
+        .main-nav .nav-menu>summary{list-style:none;cursor:pointer;white-space:nowrap;font-weight:700;padding:10px 0;color:#e1e9e4}
+        .main-nav .nav-menu>summary::-webkit-details-marker{display:none}
+        .main-nav .nav-menu>summary:after{content:"⌄";font-size:10px;margin-left:5px;color:#10f59d}
+        .main-nav .nav-menu[open]>summary,.main-nav .nav-menu>summary:hover{color:#10f59d}
+        .main-nav .nav-dropdown{position:absolute;top:calc(100% + 8px);left:50%;transform:translateX(-50%);width:245px;max-height:70vh;overflow:auto;padding:8px;display:none;background:rgba(4,15,12,.98);border:1px solid rgba(16,245,157,.22);border-radius:14px;box-shadow:0 24px 55px rgba(0,0,0,.55);z-index:1200}
+        .main-nav .nav-menu[open]>.nav-dropdown{display:block}
+        .main-nav .nav-dropdown a{display:block;padding:10px 12px;border-radius:8px;white-space:normal;color:#cbd2cf;font-size:13px}
+        .main-nav .nav-dropdown a:hover{background:rgba(16,245,157,.08);color:#d9ff45}
+        @media(max-width:900px){
+          .main-nav.open,.main-nav.is-open{display:flex!important;position:absolute!important;top:100%!important;left:0!important;right:0!important;max-height:calc(100vh - 80px);overflow:auto;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:12px 22px!important;background:rgba(4,13,10,.98)!important;border-bottom:1px solid rgba(16,245,157,.16)!important;z-index:1200}
+          .main-nav.open>a,.main-nav.is-open>a,.main-nav .nav-menu>summary{padding:13px 8px!important;text-align:left}
+          .main-nav .nav-dropdown{position:static!important;left:auto!important;top:auto!important;transform:none!important;width:100%!important;max-height:none!important;margin:0 0 8px!important;box-shadow:none!important}
+          .nav-actions{gap:10px}
+        }
+      `;
+      document.head.appendChild(navStyle);
+    }
     nav.innerHTML = "";
     masterNavItems.forEach(([label, target]) => {
       if (typeof target === "string") {
