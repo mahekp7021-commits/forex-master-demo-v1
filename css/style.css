@@ -1917,3 +1917,44 @@ body{
     top:72%!important;
   }
 }
+
+
+/* Header refinement: GO COIIN-style hierarchy, keeping FOREX Master Demo colors and branding. */
+.site-header{background:rgba(5,14,11,.97)!important;border-bottom:1px solid rgba(16,245,157,.12)!important}
+.site-header .nav-wrap{height:78px!important;min-height:78px!important;display:flex!important;gap:clamp(14px,1.7vw,26px)!important}
+.site-header .brand{flex:0 0 auto!important;min-width:145px!important;gap:9px!important}
+.site-header .brand-logo{width:36px!important;height:36px!important}
+.site-header .brand-text{font-size:22px!important;white-space:nowrap!important}
+.site-header .brand-text small{font-size:5.5px!important;letter-spacing:.13em!important}
+.site-header .main-nav{flex:1 1 auto!important;min-width:0!important;display:flex!important;align-items:center!important;justify-content:center!important;gap:clamp(10px,1.45vw,22px)!important;white-space:nowrap!important}
+.site-header .main-nav>a,.site-header .nav-menu>summary{font-size:clamp(11px,.88vw,13px)!important;font-weight:700!important;white-space:nowrap!important;color:#dce6e0!important}
+.site-header .main-nav>a:hover,.site-header .nav-menu>summary:hover,.site-header .nav-menu[open]>summary{color:var(--green)!important}
+.site-header .nav-menu>summary:after{margin-left:4px!important;font-size:9px!important}
+.site-header .nav-actions{flex:0 0 auto!important;display:flex!important;align-items:center!important;gap:12px!important;margin-left:0!important}
+.site-header .login-link{display:inline-flex!important;align-items:center!important;white-space:nowrap!important;font-size:12px!important;font-weight:700!important}
+.site-header .nav-actions .btn{white-space:nowrap!important;min-height:42px!important;padding:0 17px!important;border-radius:9px!important;font-size:12px!important}
+.site-header .nav-actions .btn span{font-size:15px!important}
+@media(max-width:1120px) and (min-width:901px){
+ .site-header .nav-wrap{gap:12px!important}
+ .site-header .brand{min-width:120px!important}
+ .site-header .brand-logo{width:32px!important;height:32px!important}
+ .site-header .brand-text{font-size:19px!important}
+ .site-header .main-nav{gap:9px!important}
+ .site-header .main-nav>a,.site-header .nav-menu>summary{font-size:11px!important}
+ .site-header .nav-actions{gap:8px!important}
+ .site-header .nav-actions .btn{padding:0 12px!important}
+}
+@media(max-width:900px){
+ .site-header .nav-wrap{height:72px!important;min-height:72px!important;gap:12px!important}
+ .site-header .brand{min-width:0!important}
+ .site-header .menu-toggle{display:flex!important;flex:0 0 42px!important;margin-left:auto!important}
+ .site-header .main-nav{display:none!important;justify-content:flex-start!important;white-space:normal!important}
+ .site-header .main-nav.open,.site-header .main-nav.is-open{display:flex!important;position:absolute!important;top:100%!important;left:16px!important;right:16px!important;flex-direction:column!important;align-items:stretch!important;gap:0!important;padding:12px 18px!important;background:rgba(5,14,11,.99)!important;border:1px solid rgba(16,245,157,.18)!important;border-radius:0 0 16px 16px!important;box-shadow:0 20px 50px rgba(0,0,0,.4)!important;max-height:calc(100vh - 85px)!important;overflow:auto!important}
+ .site-header .main-nav>a,.site-header .nav-menu>summary{font-size:14px!important;padding:12px 6px!important}
+ .site-header .nav-menu{width:100%!important}
+ .site-header .nav-dropdown{position:static!important;left:auto!important;top:auto!important;transform:none!important;width:100%!important;max-height:none!important;margin:0 0 7px!important;box-shadow:none!important}
+ .site-header .nav-actions{display:flex!important;margin-left:0!important}
+ .site-header .login-link{display:none!important}
+ .site-header .nav-actions .btn{min-height:40px!important;padding:0 12px!important}
+}
+@media(max-width:520px){.site-header .brand-logo{width:32px!important;height:32px!important}.site-header .brand-text{font-size:19px!important}.site-header .nav-actions{display:none!important}}
