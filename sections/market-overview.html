@@ -1,0 +1,92 @@
+<!-- FOREX — MARKET OVERVIEW / TRADINGVIEW TICKERS -->
+<!-- FOREX — FINLOGIX RUNNING TAPE -->
+<div class="fx-site-running-tape" aria-label="Finlogix live market prices">
+  <iframe src="./widgets/finlogix-strip.html?v=20260918-final" title="Finlogix live market prices" scrolling="no"></iframe>
+</div>
+
+<section class="fx-market-section" id="markets" aria-labelledby="marketSectionTitle">
+  <div class="fx-market-shell">
+    <div class="fx-market-heading">
+      <div>
+        <p class="fx-market-eyebrow">LIVE MARKET OVERVIEW</p>
+        <h2 id="marketSectionTitle">Market Tickers</h2>
+        <p class="fx-market-subtitle">Track multiple global markets in one live view.</p>
+      </div>
+      <a class="fx-market-all" href="./markets/forex.html"><span>View All Markets</span><b aria-hidden="true">→</b></a>
+    </div>
+
+    <div class="fx-market-summary-card" aria-label="TradingView Market Tickers">
+      <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-tickers.js"></script>
+      <tv-tickers symbols="FOREXCOM:SPXUSD,FOREXCOM:NSXUSD,FX:EURUSD,BITSTAMP:ETHUSD,OANDA:XAUUSD,NASDAQ:AAPL" hide-chart theme="light" transparent></tv-tickers>
+    </div>
+  </div>
+</section>
+
+<!-- FOREX — CRYPTOCURRENCY / TRADINGVIEW MARKET OVERVIEW -->
+<section class="fx-crypto-section" id="cryptocurrency" aria-labelledby="fxCryptoTitle">
+  <div class="fx-crypto-shell">
+    <div class="fx-crypto-heading">
+      <p class="fx-crypto-eyebrow">LIVE MARKET OVERVIEW</p>
+      <h2 id="fxCryptoTitle">Cryptocurrency</h2>
+      <p class="fx-crypto-subtitle">Track multiple global cryptocurrencies in one live view.</p>
+    </div>
+
+    <div class="fx-crypto-grid">
+      <div class="fx-crypto-widget-card" aria-label="TradingView live cryptocurrency market overview">
+        <div class="fx-crypto-widget-head">
+          <strong>Top Cryptocurrencies</strong>
+          <span><i aria-hidden="true"></i> Live Prices</span>
+        </div>
+        <div class="fx-crypto-chart-host">
+          <script type="module" src="https://widgets.tradingview-widget.com/w/en/tv-market-overview.js"></script>
+          <tv-market-overview mode="market-movers" assets-type="crypto"></tv-market-overview>
+        </div>
+      </div>
+
+      <div class="fx-crypto-info">
+        <p class="fx-crypto-kicker">REAL-TIME CRYPTO DATA</p>
+        <h3>Market Overview</h3>
+        <p class="fx-crypto-lead">Live cryptocurrency prices and market movements at a glance.</p>
+        <p class="fx-crypto-copy">
+          The Market Overview widget gives traders a compact view of cryptocurrency market
+          movers, making it easier to monitor live prices and quickly identify changing market momentum.
+        </p>
+
+        <div class="fx-crypto-features">
+          <div><span>01</span><strong>Live Prices</strong><p>Monitor current cryptocurrency prices in one place.</p></div>
+          <div><span>02</span><strong>Market Movers</strong><p>See cryptocurrencies showing notable market movement.</p></div>
+          <div><span>03</span><strong>Crypto Markets</strong><p>Explore a broad view of the cryptocurrency market.</p></div>
+          <div><span>04</span><strong>Price Changes</strong><p>Quickly compare current market movement.</p></div>
+          <div><span>05</span><strong>Compact View</strong><p>Keep important market information easy to scan.</p></div>
+          <div><span>06</span><strong>Trader Friendly</strong><p>Designed for faster market monitoring and awareness.</p></div>
+        </div>
+
+        <p class="fx-crypto-note">Stay updated with real-time cryptocurrency market information.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOREX — ADVANCED REAL-TIME CHART / TRADINGVIEW -->
+<section class="fx-market-data-section" id="market-data" aria-labelledby="fxMarketDataTitle">
+  <div class="fx-market-data-shell">
+    <div class="fx-market-data-heading">
+      <div>
+        <p class="fx-market-data-eyebrow">ADVANCED REAL-TIME CHART</p>
+        <h2 id="fxMarketDataTitle">Advanced Real-Time Chart</h2>
+        <p>Here's a free and powerful chart for you to easily embed in any website. Make it yours with a ton of different customization options.</p>
+      </div>
+    </div>
+
+    <div class="fx-market-data-card" aria-label="TradingView XAUUSD Advanced Real-Time Chart">
+      <!-- TradingView Widget BEGIN -->
+      <div class="tradingview-widget-container" style="height:100%;width:100%">
+        <div class="tradingview-widget-container__widget" style="height:calc(100% - 32px);width:100%"></div>
+        <div class="tradingview-widget-copyright"><a href="https://www.tradingview.com/symbols/XAUUSD/?exchange=OANDA" rel="noopener nofollow" target="_blank"><span class="blue-text">XAUUSD chart</span></a><span class="trademark"> by TradingView</span></div>
+        <!-- TradingView Advanced Chart is executed by the FOREX section loader after dynamic section insertion. -->
+      </div>
+      <!-- TradingView Widget END -->
+    </div>
+  </div>
+</section>
+
