@@ -1,0 +1,278 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="description" content="FOREX master demo page. Client content is illustrative and should be approved before production.">
+<meta name="theme-color" content="#06111f">
+<title>economic calendar — FOREX</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#06111f;
+  --bg2:#081827;
+  --panel:#0a1b2d;
+  --panel2:#0c2237;
+  --text:#f7fbff;
+  --muted:#96aabd;
+  --muted2:#71879c;
+  --blue:#00a8ff;
+  --red:#ff3154;
+  --red2:#ff4766;
+  --green:#00d49a;
+  --border:rgba(120,180,220,.14);
+  --container:1320px
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:var(--bg);color:var(--text);font-family:Inter,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(calc(100% - 64px),var(--container));margin-inline:auto}
+
+/* Header */
+.site-header{position:sticky;top:0;z-index:1000;background:rgba(5,16,29,.96);border-bottom:1px solid rgba(110,170,215,.12);backdrop-filter:blur(14px)}
+.header-inner{min-height:80px;display:flex;align-items:center;gap:24px}
+.brand{display:flex;align-items:center;gap:10px;flex-shrink:0}
+.brand-mark{width:32px;height:30px;display:flex;align-items:flex-end;gap:3px}
+.brand-mark i{display:block;width:5px;background:var(--blue);border-radius:2px 2px 0 0}
+.brand-mark i:nth-child(1){height:10px}.brand-mark i:nth-child(2){height:17px}.brand-mark i:nth-child(3){height:23px}.brand-mark i:nth-child(4){height:30px}
+.brand-name{font-size:22px;line-height:1;font-weight:800;letter-spacing:-.8px}.brand-name strong{color:var(--red)}
+.brand-tagline{display:block;color:#73869a;font-size:7px;margin-top:2px}
+.main-nav{display:flex;align-items:stretch;gap:2px;margin-left:auto}
+.nav-item{position:relative}
+.nav-trigger,.nav-link{height:80px;padding:0 12px;border:0;background:transparent;color:#d9e4ef;display:inline-flex;align-items:center;gap:6px;font-size:13px;font-weight:650;cursor:pointer}
+.nav-trigger:hover,.nav-link:hover,.nav-item:hover>.nav-trigger{color:var(--blue)}
+.nav-trigger em{font-style:normal;font-size:10px;opacity:.65}
+.dropdown{position:absolute;left:0;top:calc(100% - 1px);width:255px;padding:9px;background:linear-gradient(180deg,#091a2b,#061421);border:1px solid rgba(75,155,210,.34);border-radius:10px;box-shadow:0 22px 50px rgba(0,0,0,.42);opacity:0;visibility:hidden;transform:translateY(7px);transition:.22s}
+.nav-item:hover>.dropdown,.nav-item.is-open>.dropdown{opacity:1;visibility:visible;transform:none}
+.dropdown a{display:flex;flex-direction:column;gap:3px;padding:12px 13px;border-radius:7px}
+.dropdown a:hover{background:rgba(0,168,255,.08)}
+.dropdown span{font-size:13px;font-weight:650}.dropdown small{font-size:10px;color:#71879d}
+.header-actions{display:flex;gap:9px;margin-left:auto}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 18px;border-radius:8px;font-size:13px;font-weight:750;transition:.25s}
+.btn:hover{transform:translateY(-2px)}
+.btn-primary{background:linear-gradient(135deg,var(--red),var(--red2));color:#fff;box-shadow:0 12px 28px rgba(255,49,84,.16)}
+.btn-outline{border:1px solid rgba(120,180,220,.4);background:rgba(4,15,27,.24);color:#fff}
+.btn-outline:hover{border-color:var(--blue);background:rgba(0,168,255,.06)}
+.menu-toggle{display:none;margin-left:auto;width:48px;height:48px;border:1px solid rgba(120,180,220,.35);border-radius:8px;background:#071523}
+.menu-toggle span{display:block;width:20px;height:2px;margin:4px auto;background:#fff;border-radius:3px}
+
+/* Hero */
+.hero{position:relative;overflow:hidden;padding:88px 0 62px;background:radial-gradient(circle at 86% 20%,rgba(0,168,255,.12),transparent 34%),linear-gradient(180deg,#071726,#06111f);border-bottom:1px solid rgba(120,180,220,.08)}
+.hero:before{content:"";position:absolute;inset:0;background-image:linear-gradient(rgba(0,168,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(0,168,255,.025) 1px,transparent 1px);background-size:62px 62px;pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.08fr .92fr;gap:42px;align-items:center}
+.eyebrow{margin:0 0 12px;color:var(--blue);font-size:12px;font-weight:800;letter-spacing:2px;text-transform:uppercase}
+.hero h1{margin:0;font-size:clamp(46px,5.4vw,74px);line-height:.98;letter-spacing:-3px}
+.hero h1 span{color:var(--blue)}
+.hero-copy{max-width:720px;margin:18px 0 0;color:#a4b8ca;font-size:16px;line-height:1.8}
+.hero-actions{display:flex;gap:11px;flex-wrap:wrap;margin-top:26px}
+.hero-panel{padding:27px;border:1px solid rgba(0,168,255,.16);border-radius:21px;background:linear-gradient(145deg,#0b2338,#071725);box-shadow:0 24px 65px rgba(0,0,0,.24)}
+.hero-panel h3{margin:0 0 14px;font-size:18px}
+.hero-stat{display:flex;justify-content:space-between;gap:18px;padding:13px 0;border-bottom:1px solid rgba(120,180,220,.08)}
+.hero-stat:last-child{border-bottom:0}.hero-stat span{color:#758ba0;font-size:11px}.hero-stat strong{font-size:12px}
+
+/* Widget area */
+.tools-section{padding:70px 0 78px}
+.section-intro{max-width:880px}.section-intro h2{margin:0;font-size:clamp(34px,4vw,54px);line-height:1.05;letter-spacing:-2px}
+.section-intro p{margin:14px 0 0;color:#8fa5ba;font-size:14px;line-height:1.8}
+.widget-shell{position:relative;margin-top:34px;padding:14px;border:1px solid rgba(0,168,255,.20);border-radius:20px;background:linear-gradient(145deg,#0b2237,#071725);box-shadow:0 24px 65px rgba(0,0,0,.26)}
+.widget-frame{position:relative;border-radius:11px;overflow:hidden;background:#fff}
+.widget-frame.symbol-list{min-height:620px}
+.finlogix-container{width:100%;min-height:inherit}
+
+.widget-note{margin-top:14px;padding:13px 15px;border:1px solid rgba(0,168,255,.10);border-radius:12px;background:#081a2b;color:#71879b;font-size:10px;line-height:1.65}
+.widget-note strong{color:#a6dfff}
+.feature-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:34px}
+.feature-card{padding:25px;border:1px solid var(--border);border-radius:17px;background:linear-gradient(145deg,#0b2034,#071725);transition:.3s}
+.feature-card:hover{transform:translateY(-6px);border-color:rgba(0,168,255,.30)}
+.icon{width:46px;height:46px;display:grid;place-items:center;border:1px solid rgba(0,168,255,.18);border-radius:12px;background:rgba(0,168,255,.08);color:#9fe0ff;font-size:11px;font-weight:800;margin-bottom:17px}
+.feature-card h3{margin:0 0 9px;font-size:18px}.feature-card p{margin:0;color:#7e95a9;font-size:12px;line-height:1.75}
+.cta{padding:0 0 70px}.cta-box{padding:40px;border:1px solid rgba(0,168,255,.16);border-radius:22px;background:radial-gradient(circle at 90% 20%,rgba(0,168,255,.12),transparent 38%),linear-gradient(135deg,#0b2339,#071725)}
+.cta-box h2{margin:0;font-size:clamp(34px,4vw,52px);letter-spacing:-2px}.cta-box p{max-width:760px;margin:14px 0 0;color:#9db0c2;font-size:14px;line-height:1.8}.cta-actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:24px}
+.risk{padding:28px 0;background:#040e18;border-top:1px solid rgba(120,180,220,.08)}.risk p{margin:0;color:#697d91;font-size:10px;line-height:1.7}.risk strong{color:#a8bacb}
+
+/* Footer */
+.site-footer{background:#050d17;border-top:1px solid rgba(120,180,220,.10)}
+.footer-main{padding:44px 0 32px}.footer-grid{display:grid;grid-template-columns:1.35fr repeat(5,minmax(0,1fr));gap:24px}
+.footer-brand p{margin:14px 0 0;max-width:280px;color:#718499;font-size:11px;line-height:1.7}
+.footer-col h4{margin:0 0 13px;font-size:13px}.footer-col a{display:block;margin-bottom:9px;color:#71869d;font-size:11px}.footer-col a:hover{color:var(--blue)}
+.social-row{display:flex;gap:8px;flex-wrap:wrap}.social-link{width:36px;height:36px;display:inline-flex;align-items:center;justify-content:center;border:1px solid rgba(120,180,220,.25);border-radius:9px;background:#0a1724;color:#d6e5f0}.social-link:hover{color:#fff;border-color:var(--blue);transform:translateY(-2px)}.social-link svg{width:17px;height:17px;fill:currentColor}
+.footer-bottom{border-top:1px solid rgba(120,180,220,.07);background:#040b13}.footer-bottom-inner{min-height:50px;display:flex;align-items:center;justify-content:space-between;gap:20px}.footer-bottom p{margin:0;color:#5f7285;font-size:10px}
+
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s cubic-bezier(.2,.7,.2,1)}.reveal.show{opacity:1;transform:none}
+@media(max-width:1080px){.container,.header-inner{width:min(calc(100% - 40px),1040px)}.nav-trigger,.nav-link{padding-inline:8px}.footer-grid{grid-template-columns:repeat(3,1fr)}.footer-brand{grid-column:1/-1}}
+@media(max-width:850px){
+  .header-inner{min-height:74px}.menu-toggle{display:block}.header-actions{display:none}
+  .main-nav{position:fixed;inset:74px 0 0;display:block;padding:18px 16px 30px;background:rgba(4,13,23,.98);overflow-y:auto;transform:translateX(100%);transition:.3s}
+  .main-nav.is-open{transform:none}.nav-item{border-bottom:1px solid rgba(120,180,220,.08)}
+  .nav-trigger,.nav-link{width:100%;height:56px;justify-content:space-between;padding:0 4px;font-size:15px}.nav-link{justify-content:flex-start}
+  .dropdown{position:static;width:100%;display:none;opacity:1;visibility:visible;transform:none;padding:0 0 10px;border:0;background:transparent;box-shadow:none}
+  .nav-item.is-open>.dropdown{display:block}
+  .hero{padding:70px 0 52px}.hero-grid{grid-template-columns:1fr}
+  .feature-grid{grid-template-columns:1fr 1fr}.footer-grid{grid-template-columns:repeat(3,1fr)}
+}
+@media(max-width:560px){
+  .container,.header-inner{width:calc(100% - 28px)}
+  .hero h1{font-size:44px}.hero-copy{font-size:14px}
+  .hero-actions,.cta-actions{display:grid;grid-template-columns:1fr}.hero-actions .btn,.cta-actions .btn{width:100%}
+  .tools-section{padding:56px 0}.widget-shell{padding:9px;border-radius:16px}.widget-frame.symbol-list{min-height:540px}.widget-frame.calendar{min-height:500px}
+  
+  .feature-grid{grid-template-columns:1fr}.cta-box{padding:28px 20px}
+  .footer-grid{grid-template-columns:1fr 1fr}.footer-brand{grid-column:1/-1}
+  .footer-bottom-inner{min-height:auto;padding:13px 0;flex-direction:column;align-items:flex-start;gap:5px}
+}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none}.feature-card,.btn,.social-link{transition:none!important}}
+
+/* ===== ECONOMIC CALENDAR — NATURAL HEIGHT + MAX SCROLL ===== */
+.widget-frame.calendar{
+  position:relative;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:360px !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  overscroll-behavior:contain !important;
+  -webkit-overflow-scrolling:touch !important;
+  background:#fff !important;
+}
+.widget-frame.calendar .finlogix-container,
+.widget-frame.calendar #economic-calendar-93698{
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  overflow:visible !important;
+  background:#fff !important;
+}
+.widget-frame.calendar iframe{
+  display:block !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:0 !important;
+  max-height:none !important;
+  border:0 !important;
+  background:#fff !important;
+}
+@media(max-width:700px){
+  .widget-frame.calendar{
+    max-height:390px !important;
+  }
+}
+
+</style>
+<link rel="stylesheet" href="../css/style.css"><link rel="stylesheet" href="../css/responsive.css"><link rel="stylesheet" href="../css/pages.css"><link rel="stylesheet" href="../css/source-page-adapter.css"></head>
+<body>
+
+<header class="site-header" id="top"><div class="container nav-wrap"><a class="brand" href="../index.html"><img class="brand-logo" src="../assets/logo.svg" alt="FOREX"><span class="brand-text">FOREX<small>TRADE A BETTER TOMORROW</small></span></a><button class="menu-toggle" type="button" aria-label="Toggle menu" aria-expanded="false"><span></span><span></span><span></span></button><nav class="main-nav" aria-label="Main navigation"></nav><div class="nav-actions"><a class="login-link" href="../login.html">Login ↗</a><a class="btn btn-lime btn-small" href="../signup.html">Sign Up <span>→</span></a></div></div></header>
+
+<main>
+<section class="hero"><div class="container"><div class="hero-grid">
+<div>
+<p class="eyebrow reveal">Economic Events</p>
+<h1 class="reveal d1">Track the events that <span>move markets.</span></h1>
+<p class="hero-copy reveal d2">Follow scheduled economic releases through an embedded economic-calendar widget while keeping traders on the FOREX website.</p>
+<div class="hero-actions reveal d3"><a class="btn btn-primary" href="../trading/account-opening.html">Open Account →</a><a class="btn btn-outline" href="../index.html">Back to Home</a></div>
+</div>
+<div class="hero-panel reveal d2"><h3>FOREX · Tools</h3><div class="hero-stat"><span>Widget</span><strong>Economic Calendar</strong></div><div class="hero-stat"><span>View</span><strong>Scheduled events</strong></div><div class="hero-stat"><span>Access</span><strong>FOREX page</strong></div></div>
+</div></div></section>
+
+<section class="tools-section"><div class="container">
+<div class="section-intro reveal">
+<p class="eyebrow">Live Data</p>
+<h2>Economic calendar.</h2>
+<p>Track scheduled economic events and market-sensitive releases inside FOREX.</p>
+</div>
+
+<div class="fxverify-calendar" id="economic-calendar-93698">
+    <script type="text/javascript" src="https://fxverify.com/Content/remote/remote-calendar-widget.js"></script>
+    <script type="text/javascript">
+      RemoteCalendar({
+        "DefaultTime": "7 days",
+        "DefaultTheme": "plain",
+        "Url": "https://fxverify.com",
+        "SubPath": "economic-calendar",
+        "IsShowEmbedButton": true,
+        "DefaultCountries": "AF,AL,DZ,AS,AD,AO,AG,AR,AM,AW,AU,AT,AZ,BS,BH,BD,BB,BY,BE,BZ,BJ,BM,BT,BO,BA,BW,BR,BN,BG,BF,BI,KH,CM,CA,CV,CF,TD,CL,CN,CO,KM,CG,CR,HR,CU,CY,CZ,DK,DJ,DM,DO,TL,EC,EG,SV,GQ,ER,EE,ET,EU,FO,FJ,FI,FR,PF,GA,GM,GE,DE,GH,GR,GL,GD,GU,GT,GN,GW,GY,HT,HN,HK,HU,IS,IN,ID,IR,IQ,IE,IM,IL,IT,CI,JM,JP,JO,KZ,KE,KI,XK,KW,KG,LA,LV,LB,LS,LR,LY,LI,LT,LU,MO,MK,MG,MW,MY,MV,ML,MT,MH,MR,MU,YT,MX,FM,MD,MC,MN,ME,MA,MZ,MM,NA,NP,NL,AN,NC,NZ,NI,NE,NG,KP,MP,NO,OM,PK,PW,PS,PA,PG,PY,PE,PH,PL,PT,PR,QA,CD,RO,RU,RW,LC,VC,WS,SM,ST,SA,SN,RS,SC,SL,SG,SK,SI,SB,SO,ZA,KR,SS,ES,LK,KN,MF,SD,SR,SZ,SE,CH,SY,TW,TJ,TZ,TH,TG,TO,TT,TN,TR,TM,UG,UA,AE,GB,US,UY,UZ,VU,VE,VN,VI,YE,ZM,ZW",
+        "DefaultImpacts": "HIGH,MEDIUM,LOW,NONE",
+        "ContainerId": "economic-calendar-93698"
+      });
+    </script>
+</div>
+
+<div class="widget-note"><strong>Interactive widget:</strong> The financial widget is embedded directly on FOREX with its native provider controls and branding.</div>
+
+<div class="feature-grid"><article class="feature-card reveal"><div class="icon">01</div><h3>Event Awareness</h3><p>Keep scheduled market-sensitive releases in view during your market-preparation routine.</p></article><article class="feature-card reveal"><div class="icon">02</div><h3>Planning Tool</h3><p>Use the calendar as one part of a broader analysis and risk-management workflow.</p></article><article class="feature-card reveal"><div class="icon">03</div><h3>On-Site Experience</h3><p>The calendar remains fully native and interactive inside FOREX.</p></article></div>
+</div></section>
+
+<section class="cta"><div class="container"><div class="cta-box reveal">
+<p class="eyebrow">Next Step</p><h2>Prepare before you trade.</h2><p>Use the economic calendar alongside your market analysis, account conditions and risk controls before placing a trade.</p>
+<div class="cta-actions"><a class="btn btn-primary" href="../trading/account-opening.html">Open Account →</a><a class="btn btn-outline" href="../trading/how-to-start.html">How to Start</a></div>
+</div></div></section>
+
+<section class="risk"><div class="container"><p><strong>Risk Warning:</strong> Trading Forex and CFDs involves a high level of risk and may not be suitable for all investors. You may lose some or all of your invested capital. Please review the applicable risk disclosure carefully before trading.</p></div></section>
+</main>
+
+<footer class="site-footer"><div class="container footer-grid"><div class="footer-brand"><a class="brand" href="../index.html"><img class="brand-logo" src="../assets/logo.svg" alt="FOREX"><span class="brand-text">FOREX<small>TRADE A BETTER TOMORROW</small></span></a><p>FOREX master demo — replace client-specific content before production.</p></div><div><h4>Markets</h4><a href="../markets.html">Overview</a><a href="../forex.html">Forex</a><a href="../commodities.html">Commodities</a><a href="../indices.html">Indices</a><a href="../crypto.html">Crypto</a></div><div><h4>Trading</h4><a href="../accounts.html">Accounts</a><a href="../trading-conditions.html">Conditions</a><a href="../platforms.html">Platforms</a><a href="../trading-guides.html">How to Start</a></div><div><h4>Payment</h4><a href="../deposit-withdrawal.html">Deposits</a><a href="../deposit-withdrawal.html">Withdrawals</a></div><div><h4>Legal</h4><a href="../terms.html">Terms</a><a href="../privacy.html">Privacy</a><a href="../risk-disclosure.html">Risk Disclosure</a><a href="../aml-policy.html">AML / KYC</a></div></div><div class="container footer-bottom"><span>© 2026 FOREX</span><span>Demo content — verify before production.</span></div></footer>
+
+<script>
+(() => {
+  const toggle=document.getElementById("menuToggle");
+  const nav=document.getElementById("mainNavigation");
+  const items=document.querySelectorAll(".nav-item");
+
+  if(toggle && nav){
+    toggle.addEventListener("click",()=>{
+      const open=nav.classList.toggle("is-open");
+      toggle.setAttribute("aria-expanded",String(open));
+      document.body.style.overflow=open?"hidden":"";
+    });
+  }
+
+  items.forEach(item=>{
+    const trigger=item.querySelector(".nav-trigger");
+    if(!trigger)return;
+    trigger.addEventListener("click",e=>{
+      e.preventDefault();
+      const open=item.classList.contains("is-open");
+      items.forEach(x=>x.classList.remove("is-open"));
+      if(!open)item.classList.add("is-open");
+    });
+  });
+
+  document.querySelectorAll(".main-nav a").forEach(a=>{
+    a.addEventListener("click",()=>{
+      nav?.classList.remove("is-open");
+      document.body.style.overflow="";
+    });
+  });
+
+  const observer=new IntersectionObserver((entries,o)=>{
+    entries.forEach(entry=>{
+      if(entry.isIntersecting){
+        entry.target.classList.add("show");
+        o.unobserve(entry.target);
+      }
+    });
+  },{threshold:.08,rootMargin:"0px 0px -30px 0px"});
+
+  document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+
+  document.addEventListener("click",e=>{
+    if(window.innerWidth>850 && !e.target.closest(".nav-item")){
+      items.forEach(x=>x.classList.remove("is-open"));
+    }
+  });
+})();
+</script>
+
+
+
+<script src="../site-fixes.js?v=20260921-mobile-nav-final" defer></script>
+
+<script src="../mobile-nav-hotfix.js?v=20260921-1548" defer></script>
+</body>
+</html>
