@@ -308,6 +308,13 @@ document.addEventListener("DOMContentLoaded", () => {
   };
   buildMasterNav();
 
+  // Keep the header actions compact and consistent with a broker website.
+  document.querySelectorAll(".nav-actions .btn").forEach((button) => {
+    button.href = (location.pathname.split("/").filter(Boolean).length > 1 ? "../" : "") + "trading/account-opening.html";
+    button.innerHTML = 'Open Account <span aria-hidden="true">→</span>';
+    button.setAttribute("aria-label", "Open an account");
+  });
+
   // Close the mobile menu after selecting a destination.
   document.querySelectorAll(".main-nav a").forEach((link) => {
     link.addEventListener("click", () => {
